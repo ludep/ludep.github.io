@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Building &#8211; LUDEP</title>
+	<atom:link href="https://www.ludep.com/category/building/feed/" rel="self" type="application/rss+xml" />
+	<link>https://www.ludep.com</link>
+	<description>Leading Units &#38; Drone Enabled Probing</description>
+	<lastBuildDate>
+	Wed, 31 Aug 2011 17:43:20 +0000	</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	
+	<item>
+		<title>Arrival of the new omniwheels</title>
+		<link>https://www.ludep.com/arrival-of-the-new-omniwheels/</link>
+				<pubDate>Fri, 01 Jul 2011 12:51:23 +0000</pubDate>
+		<dc:creator><![CDATA[Guillaume]]></dc:creator>
+				<category><![CDATA[Building]]></category>
+		<category><![CDATA[Ground robots]]></category>
+		<category><![CDATA[Programming]]></category>
+		<category><![CDATA[Refining the project]]></category>
+		<category><![CDATA[Testing]]></category>
+
+		<guid isPermaLink="false">http://www.ludep.com/?p=702</guid>
+				<description><![CDATA[It&#8217;s been one week now we are testing the new Rotacaster omniwheels LEGO compatible1 with our omnidirectional robot. Here is a picture with those wheels integrated with the new design. We ran quite numerous tests with the new omniwheels: we&#8217;ll show you in this article the differences with the old ones, fully study the performances of [&#8230;] <a href="https://www.ludep.com/arrival-of-the-new-omniwheels/" rel="bookmark">more</a>]]></description>
+								<content:encoded><![CDATA[<p style="text-align: justify;"><a href="http://www.ludep.com/wp-content/uploads/2011/06/Rotacaster.png"><img class="size-medium wp-image-706 alignleft" title="Rotacaster" src="http://www.ludep.com/wp-content/uploads/2011/06/Rotacaster-300x170.png" alt="" width="300" height="170" srcset="https://www.ludep.com/wp-content/uploads/2011/06/Rotacaster-300x170.png 300w, https://www.ludep.com/wp-content/uploads/2011/06/Rotacaster-1024x582.png 1024w, https://www.ludep.com/wp-content/uploads/2011/06/Rotacaster-100x56.png 100w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p style="text-align: justify;">It&#8217;s been one week now we are testing the new Rotacaster omniwheels LEGO compatible<sup><a href="https://www.ludep.com/arrival-of-the-new-omniwheels/#footnote_0_702" id="identifier_0_702" class="footnote-link footnote-identifier-link" title="http://www.rotacaster.com.au/robot-wheels.html">1</a></sup> with our omnidirectional robot. Here is a picture with those wheels integrated with the new design.</p>
+<p style="text-align: justify;">We ran quite numerous tests with the new omniwheels: we&#8217;ll show you in this article the differences with the old ones, fully study the performances of Rotacaster omniwheels and what can be your expectations when you get those ones.</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;">&nbsp;</p>
+<h2 style="text-align: justify;">Our LEGO design vs. Rotacaster LEGO compatible design</h2>
+<table class="aligncenter" width="890">
+<tbody>
+<tr>
+<td><object width="425" height="349" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"><param name="allowFullScreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="src" value="http://www.youtube.com/v/HpdgqefL2so?version=3&amp;hl=en_US" /><param name="allowfullscreen" value="true" /><embed width="425" height="349" type="application/x-shockwave-flash" src="http://www.youtube.com/v/HpdgqefL2so?version=3&amp;hl=en_US" allowFullScreen="true" allowscriptaccess="always" allowfullscreen="true" /></object></td>
+<td><object width="425" height="349" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"><param name="allowFullScreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="src" value="http://www.youtube.com/v/-kWDNVSWzoI?version=3&amp;hl=en_US" /><param name="allowfullscreen" value="true" /><embed width="425" height="349" type="application/x-shockwave-flash" src="http://www.youtube.com/v/-kWDNVSWzoI?version=3&amp;hl=en_US" allowFullScreen="true" allowscriptaccess="always" allowfullscreen="true" /></object></td>
+</tr>
+<tr>
+<th>Without correction</th>
+<th>With PI correction</th>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;">This test is supposed to give the worst results for one reason: every time the robot is given a new direction command, it&#8217;s making a light rotation provided that the two angles are close to each other (&lt;20°). We had the worst results with 90° turns, and this is the reason why on those videos, the robots (old omniwheel vs Rotacaster design) are making a square (about  7 meters perimeter) at the same time so as to observe their behavior.  In order to sum up the differences of both robots, making a table seemed to be more convenient.</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;">&nbsp;</p>
+<table class="aligncenter">
+<tbody>
+<tr>
+<th></th>
+<th colspan="2">Custom LEGO omniwheel design</th>
+<th colspan="2">Rotacaster omniwheel design</th>
+</tr>
+<tr>
+<td></td>
+<td><strong>No correction</strong></td>
+<td><strong>PI correction</strong></td>
+<td><strong>No correction</strong></td>
+<td><strong>PI correction</strong></td>
+</tr>
+<tr>
+<td><strong>Straight lines</strong></td>
+<td><em>Poor</em></td>
+<td><em>Acceptable</em></td>
+<td><em>Really nice</em></td>
+<td><em>Close to perfection</em></td>
+</tr>
+<tr>
+<td><strong>Measured errors</strong></td>
+<td><em>Strong distance and angular errors</em></td>
+<td><em>Improved behavior but still not acceptable</em></td>
+<td><em>Distance OK, angle can be improved</em></td>
+<td><em>Distance still OK and angle really close to expectations</em></td>
+</tr>
+<tr>
+<td><strong>Reliability</strong></td>
+<td colspan="2"><em>Nice in order to test an omnidirectional device, but lacks of accuracy, adherence. You cannot get functional and light omniwheel at the same time and this is a huge constraint.</em></td>
+<td colspan="2"><em>A surprise. Totally unexpected. Even without correction the model is better than ours. With such a project we have, we need accuracy and coupled with a correction, that&#8217;s the best deal.</em></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;">&nbsp;</p>
+<h2 style="text-align: justify;">Rotacaster omniwheel accuracy tests</h2>
+<h3 style="text-align: justify;">Results</h3>
+<p style="text-align: justify;">After observing the tremendous difference that we obtained with our new omniwheels, we wanted to look at the accuracy closer. In order to do that, we coded a function able to make the robot draw a polygon (with a parameterisable number of sides and length for the perimeter) and we run several test with different number of side and compared the results with and without correction. Here is the algorithm:</p>
+<pre style="text-align: justify;">public void drawPentagone(int iter, int len)
+{
+   if ( iter &lt; 2 ) return;
+   int angle = 360/iter;
+
+   for (int i = 0; i &lt; iter; i++) {
+      moveAngLen(angle/2+i*angle, len/iter);
+   }
+}</pre>
+<p style="text-align: justify;">After that, we ran the tests (several times for each configuration, taking the average as a result) and measured the distance errors (distance from the finishing to the starting point, supposed to be the same) and angular errors (the robot isn&#8217;t supposed to turn on itself, this error is simply the angular difference between the starting and finishing point).</p>
+<p style="text-align: justify;"><a href="http://www.ludep.com/wp-content/uploads/2011/06/omniwheel_Rotacaster_performances.png"><img class="aligncenter size-full wp-image-728" title="omniwheel_Rotacaster_performances" src="http://www.ludep.com/wp-content/uploads/2011/06/omniwheel_Rotacaster_performances.png" alt="" width="934" height="276" srcset="https://www.ludep.com/wp-content/uploads/2011/06/omniwheel_Rotacaster_performances.png 934w, https://www.ludep.com/wp-content/uploads/2011/06/omniwheel_Rotacaster_performances-300x88.png 300w, https://www.ludep.com/wp-content/uploads/2011/06/omniwheel_Rotacaster_performances-100x29.png 100w" sizes="(max-width: 934px) 100vw, 934px" /></a></p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;">&nbsp;</p>
+<h3 style="text-align: justify;">Interpretation / Conclusion</h3>
+<p style="text-align: justify;">First, as mentioned before, the robot is really accurate as long as the commands doesn&#8217;t change much the directions given to the robot: this is why we have really interesting results for n=2. We can see that we have a peak for n=4 as we explained before but it is interesting to look at the behavior of the curbs starting at n=9.</p>
+<p style="text-align: justify;">Without any correction, the results are totally unreliable within the time: the system is reliable for few movements but the more turns there are, the bigger the errors get (the last test we did was with a 360-sided polygon, it was almost supposed to be a circle but we weren&#8217;t close enough to call that a circle).</p>
+<p style="text-align: justify;">Nonetheless, with a simple PI correction (that might be better tuned along the project, even upgraded to a PID) the errors tend to be constant and more than acceptable: with the 360 sided polygon, we had 20 centimeters of &#8220;distance error&#8221; (over 7 meters and 359 turns) and less than 10° of &#8220;angular error&#8221;.</p>
+<p style="text-align: justify;">We are obviously aware that we can not reach a perfect regulation simply because the robot is only regulating itself with its self parameters (tacho count of the motors) and nothing else. Indeed it would be better if we had another sensors (as the compass that we tried before) that could be 100% reliable but our previous tests showed us that it wasn&#8217;t possible (with the LEGO technologies, at least). So for the time being, the results we came out with are more than enough for our project and we know that we can make it even more accurate if we spend some more time on the PID.</p>
+<p style="text-align: justify;">We hope this article demonstrated you the use of the PID and that self made design are indeed enriching and give fuel for thought for the community but don&#8217;t ever play cheap and know how to allocate wisely your resources for the faith of your project. In that case, if you need to build omnidirectional devices, Rotacaster is a sure investment.</p>
+<p>&nbsp;<br />
+<b>References</b></p>
+<ol class="footnotes">
+<li id="footnote_0_702" class="footnote"><a href="http://www.rotacaster.com.au/robot-wheels.html">http://www.rotacaster.com.au/robot-wheels.html</a></li>
+</ol>
+<div class='shareaholic-canvas' data-app-id='17416102' data-app='recommendations' data-title='Arrival of the new omniwheels' data-link='https://www.ludep.com/arrival-of-the-new-omniwheels/' data-summary=''></div>]]></content:encoded>
+										</item>
+		<item>
+		<title>Improving the omnidirectional robot design</title>
+		<link>https://www.ludep.com/improving-the-omnidirectional-robot-design/</link>
+				<pubDate>Wed, 01 Jun 2011 14:23:40 +0000</pubDate>
+		<dc:creator><![CDATA[Guillaume]]></dc:creator>
+				<category><![CDATA[Building]]></category>
+		<category><![CDATA[Ground robots]]></category>
+		<category><![CDATA[Ideas]]></category>
+		<category><![CDATA[Issues]]></category>
+		<category><![CDATA[Refining the project]]></category>
+
+		<guid isPermaLink="false">http://www.ludep.com/?p=566</guid>
+				<description><![CDATA[It&#8217;s been two weeks now we have been struggling with a major issue. After implementing the manual driving mode, we wanted the robot to move to specific positions and we encountered problems with accuracy. For instance, on a same command, the robot could have different behaviors, totally unpredictable. We sure knew this could be improved [&#8230;] <a href="https://www.ludep.com/improving-the-omnidirectional-robot-design/" rel="bookmark">more</a>]]></description>
+								<content:encoded><![CDATA[<p style="text-align: justify;">It&#8217;s been two weeks now we have been struggling with a major issue. After implementing the manual driving mode, we wanted the robot to move to specific positions and we encountered problems with accuracy. For instance, on a same command, the robot could have different behaviors, totally unpredictable. We sure knew this could be improved thanks to several corrections (like a PID that we&#8217;ve been working on recently) but still, we thought those errors couldn&#8217;t be only due to the mechanics. Finally, we found that our error was tremendously amplified by the orientation of the omniwheels.</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;">Indeed, instead of putting the omniwheels with their axis parallel to the floor, we decided to use some angle for stability and design purposes. But with some hindsight, we just understood that the omniwheels are just meant to be used completely perpendicular to the floor for some physical properties. When you take a normal wheel, whatever angle you put it on the floor, the only translation you can do is along the line parallel to the floor and perpendicular to the axis of the wheel. Setting the omniwheel with a none right angle messed the previous rule just mentioned.</p>
+<p style="text-align: justify;">&nbsp;</p>
+<table class="aligncenter" width="760">
+<tbody>
+<tr>
+<td><a href="http://www.ludep.com/wp-content/uploads/2011/06/OW_v2_01.png"><img class="alignnone size-full wp-image-568" title="OW_v2_01" src="http://www.ludep.com/wp-content/uploads/2011/06/OW_v2_01.png" alt="" width="360" height="388" srcset="https://www.ludep.com/wp-content/uploads/2011/06/OW_v2_01.png 600w, https://www.ludep.com/wp-content/uploads/2011/06/OW_v2_01-278x300.png 278w, https://www.ludep.com/wp-content/uploads/2011/06/OW_v2_01-92x100.png 92w" sizes="(max-width: 360px) 100vw, 360px" /></a></td>
+<td><a href="http://www.ludep.com/wp-content/uploads/2011/06/OW_v2_02.png"><img class="alignnone size-full wp-image-569" title="OW_v2_02" src="http://www.ludep.com/wp-content/uploads/2011/06/OW_v2_02.png" alt="" width="360" height="406" srcset="https://www.ludep.com/wp-content/uploads/2011/06/OW_v2_02.png 600w, https://www.ludep.com/wp-content/uploads/2011/06/OW_v2_02-266x300.png 266w, https://www.ludep.com/wp-content/uploads/2011/06/OW_v2_02-88x100.png 88w" sizes="(max-width: 360px) 100vw, 360px" /></a></td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p style="text-align: justify;">And this is the reason why we came out with a new design for our ground units that you can see just above. Maybe you just noticed that the omniwheels are different too, and you would be right if you did. We had to change it to because the old design didn&#8217;t allow a perpendicular setup. If you&#8217;re interested in this new design, it&#8217;s one of our own that you can use and we&#8217;re delivering some pictures below if you need a pattern.</p>
+<p>&nbsp;</p>
+<table class="aligncenter" width="457">
+<tbody>
+<tr>
+<td><a href="http://www.ludep.com/wp-content/uploads/2011/06/ow_01.png"><img class="alignnone size-medium wp-image-576" title="ow_01" src="http://www.ludep.com/wp-content/uploads/2011/06/ow_01-300x273.png" alt="" width="210" height="191" srcset="https://www.ludep.com/wp-content/uploads/2011/06/ow_01-300x273.png 300w, https://www.ludep.com/wp-content/uploads/2011/06/ow_01-100x91.png 100w, https://www.ludep.com/wp-content/uploads/2011/06/ow_01.png 600w" sizes="(max-width: 210px) 100vw, 210px" /></a></td>
+<td><a href="http://www.ludep.com/wp-content/uploads/2011/06/ow_02.png"><img class="alignnone size-medium wp-image-577" title="ow_02" src="http://www.ludep.com/wp-content/uploads/2011/06/ow_02-295x300.png" alt="" width="207" height="210" srcset="https://www.ludep.com/wp-content/uploads/2011/06/ow_02-295x300.png 295w, https://www.ludep.com/wp-content/uploads/2011/06/ow_02-98x100.png 98w, https://www.ludep.com/wp-content/uploads/2011/06/ow_02.png 600w" sizes="(max-width: 207px) 100vw, 207px" /></a></td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p style="text-align: justify;">Now we&#8217;re working on a new system of movement: acknowledging the robot is located at the point (0;0), he&#8217;s supposed to move to any specific (x;y) position. The system is working according to our expectations but we need to work on the correction to make it more reliable (because we&#8217;re loosing significant accuracy within time and distance). We&#8217;ll try to show some videos with and without corrections on the next post.</p>
+<div class='shareaholic-canvas' data-app-id='17416102' data-app='recommendations' data-title='Improving the omnidirectional robot design' data-link='https://www.ludep.com/improving-the-omnidirectional-robot-design/' data-summary=''></div>]]></content:encoded>
+										</item>
+		<item>
+		<title>Ground unit construction and structure ideas: implementing omniwheels</title>
+		<link>https://www.ludep.com/ground-unit-construction-and-structure-ideas-implementing-omniwheels/</link>
+				<pubDate>Wed, 30 Mar 2011 13:12:49 +0000</pubDate>
+		<dc:creator><![CDATA[Guillaume]]></dc:creator>
+				<category><![CDATA[Building]]></category>
+		<category><![CDATA[Ground robots]]></category>
+		<category><![CDATA[Ideas]]></category>
+		<category><![CDATA[Refining the project]]></category>
+		<category><![CDATA[Testing]]></category>
+
+		<guid isPermaLink="false">http://ludep.com/?p=239</guid>
+				<description><![CDATA[Thinking about the project in itself, we focused on the ground units in the flock and their movements. In order to follow the commands it has been given, a ground unit must turn on itself and then move forward an indicated direction (and eventually make a last rotation to be well oriented with the leader). [&#8230;] <a href="https://www.ludep.com/ground-unit-construction-and-structure-ideas-implementing-omniwheels/" rel="bookmark">more</a>]]></description>
+								<content:encoded><![CDATA[<p style="text-align: justify;">Thinking about the project in itself, we focused on the ground units in the flock and their movements. In order to follow the commands it has been given, a ground unit must turn on itself and then move forward an indicated direction (and eventually make a last rotation to be well oriented with the leader). This sequence of three different steps can obviously be executed in one single move; but without considering the obstacle avoidance part, the split way seems to be a reliable first approach. However, we wanted to suppress one of those constraint so as to make the flock units movements much more easier to establish. This way we tried to get rid of the &#8220;rotation&#8221; part in order to gain time: thus we came out with the idea of using omniwheels. It&#8217;s something we already thought about for our last project and agreed that it would be worthy to implement for this one.</p>
+<p style="text-align: justify;">Now that you&#8217;re aware of the reasons that led us over here, it&#8217;s maybe about time to tell you some more about the omniwheels (the name in itself can give you clues about its function but as this isn&#8217;t a very common system, we&#8217;ll spend some time on giving explanations). Before giving any theory, a visual contact with the device should give you some hints and satisfy your curiosity.</p>
+<p style="text-align: justify;">&nbsp;</p>
+<table class="aligncenter" width="900">
+<tbody>
+<tr>
+<td style="vertical-align: middle;"><a href="http://ludep.com/wp-content/uploads/2011/03/holonomicwheel.jpg"><img class="size-medium wp-image-246" title="Omniwheel 2" src="http://ludep.com/wp-content/uploads/2011/03/holonomicwheel-300x266.jpg" alt="" width="300" height="266" srcset="https://www.ludep.com/wp-content/uploads/2011/03/holonomicwheel-300x266.jpg 300w, https://www.ludep.com/wp-content/uploads/2011/03/holonomicwheel-100x88.jpg 100w, https://www.ludep.com/wp-content/uploads/2011/03/holonomicwheel.jpg 406w" sizes="(max-width: 300px) 100vw, 300px" /></a></td>
+<td style="vertical-align: middle;"><a href="http://ludep.com/wp-content/uploads/2011/03/XL_OmniWheel.jpg"><img class="size-medium wp-image-247" title="Omniwheel 3" src="http://ludep.com/wp-content/uploads/2011/03/XL_OmniWheel-300x196.jpg" alt="" width="300" height="196" srcset="https://www.ludep.com/wp-content/uploads/2011/03/XL_OmniWheel-300x196.jpg 300w, https://www.ludep.com/wp-content/uploads/2011/03/XL_OmniWheel-100x65.jpg 100w, https://www.ludep.com/wp-content/uploads/2011/03/XL_OmniWheel.jpg 500w" sizes="(max-width: 300px) 100vw, 300px" /></a></td>
+<td style="vertical-align: middle;"><a href="http://ludep.com/wp-content/uploads/2011/03/IMAG0105.jpg"><img class="size-medium wp-image-248" title="Omniwheel 4" src="http://ludep.com/wp-content/uploads/2011/03/IMAG0105-300x179.jpg" alt="" width="300" height="179" srcset="https://www.ludep.com/wp-content/uploads/2011/03/IMAG0105-300x179.jpg 300w, https://www.ludep.com/wp-content/uploads/2011/03/IMAG0105-1024x613.jpg 1024w, https://www.ludep.com/wp-content/uploads/2011/03/IMAG0105-100x59.jpg 100w" sizes="(max-width: 300px) 100vw, 300px" /></a></td>
+</tr>
+<tr>
+<th>Omniwheel design on <a href="http://www.holonomicwheel.com/">www.holonomicwheel.com</a></th>
+<th>TETRIX 3&#8243; Omni Wheel found on <a href="http://www.legoeducation.us/">www.legoeducation.us</a></th>
+<th>Excentric design of omniwheel found in the LEGO Lab</th>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p style="text-align: justify;">So, as you have noticed, an omniwheel (or polywheel or even holonomic wheel) is a wheel composed of little wheels all around the circumference of the big one. The axis of those little wheels are tangent to the circumference of the big one and they are all included in the same plan (thus, they should all be orthogonal to the axis of the big wheel). This architecture confers &#8220;normal wheel properties&#8221; to the omniwheel but on top of that, the omniwheel can slide along its axis of rotation (or along the projection of this axis on the surface the wheel is used on).</p>
+<p style="text-align: justify;">Nevertheless, they are some different architectures according to the creativity of the builders as you can see on the last picture on right above (the axis of the &#8220;little wheels&#8221; are not orthogonal with the axis of the omniwheel). A omniwheel isn&#8217;t omnidirectional in itself but using several of them can turn a robot into a omnidirectional car. And this was the point of our work&#8230;</p>
+<p style="text-align: justify;">&nbsp;</p>
+<table class="aligncenter" width="900">
+<tbody>
+<tr>
+<td style="vertical-align: middle;"><a href="http://ludep.com/wp-content/uploads/2011/03/IMAG0109.jpg"><img class="alignnone size-medium wp-image-289" title="OW01" src="http://ludep.com/wp-content/uploads/2011/03/IMAG0109-300x179.jpg" alt="" width="300" height="179" srcset="https://www.ludep.com/wp-content/uploads/2011/03/IMAG0109-300x179.jpg 300w, https://www.ludep.com/wp-content/uploads/2011/03/IMAG0109-1024x613.jpg 1024w, https://www.ludep.com/wp-content/uploads/2011/03/IMAG0109-100x59.jpg 100w" sizes="(max-width: 300px) 100vw, 300px" /></a></td>
+<td style="vertical-align: middle;"><a href="http://ludep.com/wp-content/uploads/2011/03/IMAG0110.jpg"><img class="alignnone size-medium wp-image-290" title="OW02" src="http://ludep.com/wp-content/uploads/2011/03/IMAG0110-300x179.jpg" alt="" width="300" height="179" srcset="https://www.ludep.com/wp-content/uploads/2011/03/IMAG0110-300x179.jpg 300w, https://www.ludep.com/wp-content/uploads/2011/03/IMAG0110-1024x613.jpg 1024w, https://www.ludep.com/wp-content/uploads/2011/03/IMAG0110-100x59.jpg 100w" sizes="(max-width: 300px) 100vw, 300px" /></a></td>
+<td style="vertical-align: middle;"><a href="http://ludep.com/wp-content/uploads/2011/03/IMAG0108.jpg"><img class="alignnone size-medium wp-image-291" title="OW03" src="http://ludep.com/wp-content/uploads/2011/03/IMAG0108-300x179.jpg" alt="" width="300" height="179" srcset="https://www.ludep.com/wp-content/uploads/2011/03/IMAG0108-300x179.jpg 300w, https://www.ludep.com/wp-content/uploads/2011/03/IMAG0108-1024x613.jpg 1024w, https://www.ludep.com/wp-content/uploads/2011/03/IMAG0108-100x59.jpg 100w" sizes="(max-width: 300px) 100vw, 300px" /></a></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;">The omniwheel above is the one we came out with. We only used LEGO pieces, it is composed of 16 little wheels and as you can see the structure isn&#8217;t that massive. After that we tackled the robot construction, knowing that we wanted to use 3 of those omniwheels. The two main problems were to work with the angles so as to respect the LEGO construction conventions (the axis of the omniwheels must cross in one point and their center must describe an equilateral triangle) and have a robust structure for the robot.</p>
+<p style="text-align: justify;">&nbsp;</p>
+<table class="aligncenter" width="850">
+<tbody>
+<tr>
+<td><object width="425" height="349"><param name="movie" value="http://www.youtube.com/v/Eu1elLqthQE?fs=1&amp;hl=en_US&amp;rel=0" /><param name="allowFullScreen" value="true" /><param name="allowscriptaccess" value="always" /><embed type="application/x-shockwave-flash" width="425" height="349" src="http://www.youtube.com/v/Eu1elLqthQE?fs=1&amp;hl=en_US&amp;rel=0" allowfullscreen="true" allowscriptaccess="always"></embed></object></td>
+<td><object width="425" height="349"><param name="movie" value="http://www.youtube.com/v/1scnbrIT1_A?fs=1&amp;hl=en_US&amp;rel=0" /><param name="allowFullScreen" value="true" /><param name="allowscriptaccess" value="always" /><embed type="application/x-shockwave-flash" width="425" height="349" src="http://www.youtube.com/v/1scnbrIT1_A?fs=1&amp;hl=en_US&amp;rel=0" allowfullscreen="true" allowscriptaccess="always"></embed></object></td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p style="text-align: justify;">Those two video show how the robot is moving and it was our first tests so from this point, we had to find out what could and should be upgraded. Namely, if you watch closely when the robot stops, it tends to balance and doesn&#8217;t here but could fall in another situations (different speed, different slope, etc). Another notable point is that the robot &#8220;bends itself&#8221; when moving or turning: this is because the fixations and the structure are not strong enough (and this was the most annoying problem). So from this point, we tried to lower the robot and widen the motors so as to provide a better stability; and tried to reinforce the structure without overweighting it (despite of the fact that we can&#8217;t neglect the stability even if it&#8217;s at the expense of the robot&#8217;s weight).</p>
+<p style="text-align: justify;">&nbsp;</p>
+<table class="aligncenter" width="900">
+<tbody>
+<tr>
+<td><a href="http://ludep.com/wp-content/uploads/2011/03/IMAG0113.jpg"><img class="alignnone size-medium wp-image-310" title="robot_v2_1" src="http://ludep.com/wp-content/uploads/2011/03/IMAG0113-300x179.jpg" alt="" width="300" height="179" srcset="https://www.ludep.com/wp-content/uploads/2011/03/IMAG0113-300x179.jpg 300w, https://www.ludep.com/wp-content/uploads/2011/03/IMAG0113-1024x613.jpg 1024w, https://www.ludep.com/wp-content/uploads/2011/03/IMAG0113-100x59.jpg 100w" sizes="(max-width: 300px) 100vw, 300px" /></a></td>
+<td><a href="http://ludep.com/wp-content/uploads/2011/03/IMAG0114.jpg"><img class="alignnone size-medium wp-image-311" title="robot_v2_2" src="http://ludep.com/wp-content/uploads/2011/03/IMAG0114-300x179.jpg" alt="" width="300" height="179" srcset="https://www.ludep.com/wp-content/uploads/2011/03/IMAG0114-300x179.jpg 300w, https://www.ludep.com/wp-content/uploads/2011/03/IMAG0114-1024x613.jpg 1024w, https://www.ludep.com/wp-content/uploads/2011/03/IMAG0114-100x59.jpg 100w" sizes="(max-width: 300px) 100vw, 300px" /></a></td>
+<td><a href="http://ludep.com/wp-content/uploads/2011/03/IMAG0115.jpg"><img class="alignnone size-medium wp-image-312" title="robot_v2_3" src="http://ludep.com/wp-content/uploads/2011/03/IMAG0115-300x179.jpg" alt="" width="300" height="179" srcset="https://www.ludep.com/wp-content/uploads/2011/03/IMAG0115-300x179.jpg 300w, https://www.ludep.com/wp-content/uploads/2011/03/IMAG0115-1024x613.jpg 1024w, https://www.ludep.com/wp-content/uploads/2011/03/IMAG0115-100x59.jpg 100w" sizes="(max-width: 300px) 100vw, 300px" /></a></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;">This way, we crafted a new robot much more stable (and quite heavier too) but the balance and the solidity were no longer problems. Something that need to be mentioned is that we inclined the omniwheels instead of installing them perpendicular to the floor (according to our experiments, this difference doesn&#8217;t seem to alter the robot&#8217;s behaviour and movements from any other &#8220;regular omnidirectionnal&#8221; robot).</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: center;"><object width="480" height="390"><param name="movie" value="http://www.youtube.com/v/mabJvuV8gbc?fs=1&amp;hl=en_US&amp;rel=0" /><param name="allowFullScreen" value="true" /><param name="allowscriptaccess" value="always" /><embed type="application/x-shockwave-flash" width="480" height="390" src="http://www.youtube.com/v/mabJvuV8gbc?fs=1&amp;hl=en_US&amp;rel=0" allowscriptaccess="always" allowfullscreen="true"></embed></object></p>
+<div class='shareaholic-canvas' data-app-id='17416102' data-app='recommendations' data-title='Ground unit construction and structure ideas: implementing omniwheels' data-link='https://www.ludep.com/ground-unit-construction-and-structure-ideas-implementing-omniwheels/' data-summary=''></div>]]></content:encoded>
+										</item>
+		<item>
+		<title>First experiments</title>
+		<link>https://www.ludep.com/first-experiments/</link>
+				<pubDate>Thu, 24 Mar 2011 11:31:55 +0000</pubDate>
+		<dc:creator><![CDATA[Guillaume]]></dc:creator>
+				<category><![CDATA[Building]]></category>
+		<category><![CDATA[Drone]]></category>
+		<category><![CDATA[Ground robots]]></category>
+		<category><![CDATA[Testing]]></category>
+
+		<guid isPermaLink="false">http://ludep.com/?p=172</guid>
+				<description><![CDATA[Before going on a coding spree and working on the project itself, we wanted to run some tests just to see if the drone could track a robot on the floor and follow it. But in order to do this, we didn&#8217;t want to code anything so we used a subterfuge: instead of using a tracking [&#8230;] <a href="https://www.ludep.com/first-experiments/" rel="bookmark">more</a>]]></description>
+								<content:encoded><![CDATA[<p style="text-align: justify;">Before going on a coding spree and working on the project itself, we wanted to run some tests just to see if the drone could track a robot on the floor and follow it. But in order to do this, we didn&#8217;t want to code anything so we used a subterfuge: instead of using a tracking feature of the drone, we investigated its stabilization process. Indeed, in order to stay on the same spot when it doesn&#8217;t receive any instructions, the drone uses its own camera pointing at the ground, analyzes the images and try to stay above the pattern it&#8217;s matching at this moment.</p>
+<p style="text-align: justify;">In our experiments, we took a ground with an almost uniform surface (this way, it would be hard for the drone to find a landmark to stay stable), made the drone take off, and then we placed the drone above a LEGO land unit with a disk on it (the results seemed to be better with the disk). At this point, the land unit would be a landmark for the drone and according to our theories, if the drone doesn&#8217;t receive any instructions and the land unit move, the drone should follow the car.</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: center;"><object width="480" height="390"><param name="movie" value="http://www.youtube.com/v/FjzlG3eHaHw?fs=1&amp;hl=en_US&amp;rel=0" /><param name="allowFullScreen" value="true" /><param name="allowscriptaccess" value="always" /><embed type="application/x-shockwave-flash" width="480" height="390" src="http://www.youtube.com/v/FjzlG3eHaHw?fs=1&amp;hl=en_US&amp;rel=0" allowfullscreen="true" allowscriptaccess="always"></embed></object></p>
+<p>&nbsp;</p>
+<p>The results are better than what we were expecting, you can see by yourself on the video above&#8230; Notice that the right smartphone remotely commands the drone (via WiFi), the left one remotely commands the ground unit (via Bluetooth) and that nobody&#8217;s touching at the drone or its remote control during all the &#8220;tracking&#8221; phase.</p>
+<div class='shareaholic-canvas' data-app-id='17416102' data-app='recommendations' data-title='First experiments' data-link='https://www.ludep.com/first-experiments/' data-summary=''></div>]]></content:encoded>
+										</item>
+	</channel>
+</rss>

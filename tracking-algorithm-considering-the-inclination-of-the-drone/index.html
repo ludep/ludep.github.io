@@ -1,0 +1,343 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<!-- <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> -->
+
+<!-- Mirrored from www.ludep.com/tracking-algorithm-considering-the-inclination-of-the-drone/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 15 Mar 2021 00:49:20 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+
+	<meta charset="UTF-8" />
+	<title>Tracking algorithm: considering the inclination of the drone | LUDEP</title>
+	<link rel="profile" href="http://gmpg.org/xfn/11" />
+	<meta name="description" content=" more" />	<meta name="keywords" content=" more, Drone, Ideas, Issues, Programming, Refining the project, Testing" />	
+
+	<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="../feed/atom/index.html" />
+	<link rel="pingback" href="../xmlrpc.php" />
+
+	<style type="text/css">/* no_sidebars.css */ div#wrapper { width:100%; }  body { font-size:12px; font-family:Verdana, Geneva, sans-serif; font-weight:normal; color:#505050; background-color:#ffffff; }  /* LAYOUT */ #container { margin: 0 auto; width: 990px; min-width:600px; background-color:#ffffff; } #wrapper { background-color:#ffffff; padding-top:10px; } #content { padding:0 15px 10px 15px; }  .sidebar .column { margin:19px  0 10px 0;}  .sidebar > :first-child h5 { margin-top:0; } #outer-footer { padding-top: 10px } #footer { border-bottom: 4px solid #27a5c4; border-top: 2px solid #27a5c4; background-color: #b7dee8; }  #header { color: #27a5c4; font-family:Georgia, serif; background-color:#ffffff; margin: 0; padding: 0; margin: 0; } #masthead { margin: 0px 0px 0px 10px; padding-left:0px; } #header h1, #header h3 { font-size:64px; margin:0; font-weight:normal; letter-spacing: -2px; padding:10px 0 0 0; } #header a.blankheader { display:block; height: 64px; width:300px; } #header a { text-decoration:none; color: #27a5c4; border-bottom:none; } #header .description { font-family:Georgia, serif; font-size:18px; font-weight:normal; font-style:italic; margin-top: -0.25em; padding-bottom: 5px; }  #header a.subscribe-button  {  display:block; float:right; margin-top:-20px; } #header a.subscribe-button:hover {  margin-top:-10px; } /* NAVIGATION */ /* =Menu -------------------------------------------------------------- */  #access { /*background: #000;*/ margin: 0 auto; width: 100%; display:block; float:left; /*padding: 1px 0 1px 8px;*/ border-top: 4px solid #27a5c4; border-bottom: 2px solid #27a5c4; background-color: #b7dee8; } #access .menu-header, div.menu { font-size: 13px; margin-left: 12px; } #access .menu-header ul, div.menu ul { list-style: none; margin: 0; } #access .menu-header li, div.menu li { float:left; position: relative; margin: 0; } #access a { display:block; text-decoration:none; padding:0 10px; line-height:38px; color: #707070;  font-family:Trebuchet MS, Helvetica, sans-serif; font-size:18px; font-weight:normal;   } #access ul ul { display:none; position:absolute; top:38px; left:0; float:left; z-index: 99999; border-left:  1px solid #27a5c4; border-right: 1px solid #27a5c4; border-bottom:1px solid #27a5c4; background-color: #b7dee8; } #access ul ul ul { left:100%; top:1px; border-top:1px solid #27a5c4;  } #access ul ul a { font-family:Trebuchet MS, Helvetica, sans-serif; font-size:13px; font-weight:normal; } #access ul ul a { /*background:#333;*/ height:auto; line-height:1em; padding:10px; width: 170px; } #access li:hover > a, #access ul ul :hover > a { color:#000000; /*background:#333;*/  } #access ul li:hover > ul { display:block; }  /* menu-item menu-item-type-post_type current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item menu-item-type-post_type current-menu-item page_item page-item-155 current_page_item */  #access .current-menu-item, #access .current_page, #access .current_page_item, #access .current_page_item a, #access .current-menu-ancestor, #access .current_page_ancestor { color: #505050; background-color: #8bd6e0; }  div.post-list-column { float:left; width:50%; } div.post-list-column .margins { padding: 0 10px 15px 10px; } .post-list-column .storycontent, .post-list-column .content { padding:0 0 0 4px; } .post-thumbnail, .regular-post-thumbnail { border: 1px solid #eeeeee; padding:3px; }  .regular-post-thumbnail { float:left; width: 100px; margin:18px 5px 10px 10px; } .wp-post-image { max-width:100%; border: none; }  div.post-list-column .wp-post-image { display:block; }  #postpath, #postpath a { font-family:Trebuchet MS, Helvetica, sans-serif; font-size:13px; font-weight:normal; color:#707070; }  /* LINKS */  a { color:#a17244; text-decoration:underline; } .post a:visited { color: #756455; text-decoration:underline; } .post a:hover { color: #de8435; text-decoration:underline; } .post h1 a:hover,  .post h2 a:hover { border-bottom:none; text-decoration:none; }  /* HEADINGS */  h1,h2,h3, h4, h5, h6 { color: #505050; margin-top:5px; font-family:Georgia, serif; font-weight: normal; } h1, h2.h1 { font-size:36px; font-weight: normal; margin:0px 0 3px 0; padding:10px 0 0 5px; color: #505050; overflow:hidden; } .post-list-column h2 { font-size: 24px; font-weight: normal; margin:0px 0 0px 0; padding:3px 0 0px 4px; color: #505050; } h2 { /*font-size:24px;*/ margin:5px 0 2px 0; color: #505050; font-size:24px; font-weight: normal; font-family:Georgia, serif; } h3 { margin:5px 0 0px 0; font-size:18px; font-weight: normal; font-family:Georgia, serif; } .post h3 { color: #98293D; } h4 { font-size:13px; font-weight: bold; font-family:Verdana, Geneva, sans-serif; } h1 a, h2.h1 a, h1 a:visited, h2.h1 a:visited, .post h1 a, .post h2.h1 a, .post h1 a:visited, .post h2.h1 a:visited, .post-list-column h2 a, .post-list-column h2 a:visited { color: #505050; border-bottom: none; text-decoration:none; } h1 a:hover, h2.h1 a:hover, h1 a:visited:hover, h2.h1 a:visited:hover, .post h1 a:hover, .post h2.h1 a:hover, .post h1 a:visited:hover, .post h2.h1 a:visited:hover, .post-list-column h2 a:hover, .post-list-column h2 a:visited:hover { color: #000000; border-bottom: none; text-decoration:none; } h1.page-title { font-size:18px; } h1.page-title span { color: #27a5c4; } /* POST */ div.post { overflow:hidden; } table.info { padding:0; margin:0; border-collapse:collapse; } table.info td,  table.info th { padding:0; margin:0; font-weight:normal; } pre { border:1px dotted #cccccc;; margin:5px 0; padding:10px 10px 10px 20px; background-color:#fbfbfb; } blockquote{ /*background:#f2f2f2 url(img/blockquote.gif) 3px 3px no-repeat;*/ border:1px dotted #cccccc; padding:10px 10px 10px 20px; margin:5px 0 5px 20px; background-color:#fbfbfb; } code { background-color:#fbfbfb; font-family: Courier New, Courier, monospace; border:1px dotted #cccccc; } .post .storycontent, .post .content { padding:5px 10px 5px 10px; overflow:hidden; line-height: 1.5; }  .post .info { padding:3px 0px 3px 0px; margin: 2px 0 2px 0; border-top: 1px solid #eeeeee; }  .post .date { background-position:0 -48px; color: #707070; padding:0 0px; } .post .info  .postedby, .post .info  .filledunder { color: #bbb; } .post .info  .postedby  a, .post .info  .filledunder a { color: #707070; text-decoration:none; } .post .info  .postedby a:hover, .post .info  .filledunder a:hover { color: #000000; text-decoration:none; } .post .info td { border: none; padding: 0 5px; } .post table.info { width:100%; } .post .info .act { white-space: nowrap; text-align:right; } .post table.info .date { width:1%; white-space: nowrap; } .post .act span { padding-left:15px; } .post .info * { font-family: Verdana, Geneva, sans-serif; line-height:16px; font-size:10px; overflow:hidden; } hr { border: 0px none; background-color: #eeeeee; color: #eeeeee; height:2px; } fieldset{ border: 1px solid #eeeeee; padding:5px 10px 5px 10px; } legend { padding: 0px 5px 1px 5px; border: 1px solid #eeeeee; } input.text, input.textbox, input.password, input.file, textarea, input[type=text], input[type=password],input[type=file], select { border:1px solid #bbbbbb; background-color:#ffffff; padding:2px; color: #505050;  } input.text:focus, input.textbox:focus, input.password:focus, input.file:focus, textarea:focus, input[type=text]:focus, input[type=password]:focus,input[type=file]:focus, select { border:1px solid #505050; }  .post table { border-collapse:collapse; border: none; } .post  th, .post  td { border-bottom:1px solid #eeeeee; border-left:none; border-right:none; padding:2px 10px; text-align:left; vertical-align:top;  font-size: 90%;  font-weight: normal; font-family: Trebuchet MS, Helvetica, sans-serif;  } .post tr.even td { background-color: #b7dee8; } .post th  { background-color: #b7dee8; border-bottom: 1px solid #27a5c4; border-top: 2px solid #27a5c4; color: #707070; } #author-avatar { float:left; width: 100px; margin:7px 15px 7px 10px; }  /* comment START */ /* COMMENTS */ #comments > ol {list-style-type: none;line-height: 18px;margin: 0px;padding: 0px 0px 10px 10px; text-align: justify;} #comments ul li {list-style-type: none;list-style-image: none;list-style-position: outside;margin: 0 0 0 5px; padding: 5px 0 0 0;} .commentlist li {margin: 15px 0 10px;padding: 2px 2px 5px 2px;list-style: none;} .commentlist li > ul > li {background:none;list-style:none;margin:3px 0 3px 20px;padding:3px 0;} .commentlist li .avatar {border:none; margin:0;padding:1px 8px 1px 1px; width: 26px;float:left; background:none;} .commentlist .fn { font-size: 14px;  font-weight: bold; font-style: normal; padding:4px 2px 2px 2px;  font-family: Verdana, Geneva, sans-serif; } .commentlist .fn > a  { font-weight:bold; font-style: normal; text-decoration:none; } .commentlist .fn a:hover {/*text-decoration:underline;*/} .commentmetadata  { /*color:#723419;*/ font-weight: normal;  font-family: Trebuchet MS, Helvetica, sans-serif; font-size:11px;  margin:0 0 0px 20px; text-decoration: none; }  .commentmetadata a  { font-weight: normal; text-decoration: none; color: #707070; }   .vcard a.url{ color: #707070; /*#723419;*/ text-decoration: none; } .vcard a.url:hover{ color: #000000; /*#723419;*/ text-decoration: none; }  .bypostauthor >.vcard div.fn >a { color:#98293D; } .bypostauthor >.vcard div.fn >a:hover { color:#000000; } .bypostauthor>div { color:#98293D; } /*  Uncomment following text to assign specific color to admin (or to any other user) You may need to change user name here E.g.  comment-author-MyUserName instead of  comment-author-admin */ /* .comment-author-admin>*, .comment-author-admin >.vcard div.fn >a { color:#106000; }*/ .comment { color:#505050; } .commentmetadata a, .commentmetadata a:visited {color: #707070;} .commentmetadata a:hover{ color: #000000;} #comments .children { padding: 0 0 0 20px; } .thread-alt {background-color:transparent} .thread-even {background-color: transparent;} .depth-1  { border: 1px solid #27a5c4; } .depth-2, .depth-3{/*border-top: 1px solid #dac2a3;*/} .even, .alt {} .vcard { background-color:#b7dee8;} .depth-2 .vcard, .depth-3 .vcard, .depth-4 .vcard, .depth-5 .vcard, .depth-6 .vcard, .depth-7 .vcard, .depth-8 .vcard { border-top: 1px dotted #27a5c4; border-bottom: 1px dotted #27a5c4; } .reply {margin: 0px 0px 0px 10px;} .comment-reply-link { background-color:#b7dee8;color: #707070; padding: 1px 4px; font-size:12px; text-decoration: none; border: 1px dotted #27a5c4; } .comment-reply-link:hover { color: #000000; text-decoration: none; }   #comments .comment-body ul li { list-style:square; margin: 0 0 0 30px; padding:0; } #comments .comment-body ol  { margin: 0; padding: 0; } #comments .comment-body ol li { list-style-type:decimal; padding:0; margin: 0 0 0 30px; display: list-item; } .comment-body { padding:2px 2px 2px 10px; }  /************************** IMAGES *************************************/  .post img.wp-caption, .wp-caption, .gallery-caption { -moz-border-radius: 3px; /* Firefox */ -webkit-border-radius: 3px; /* Safari, Chrome */ -khtml-border-radius: 3px; /* KHTML */ border-radius: 3px; /* CSS3 */    border:1px solid #eeeeee; display:block; height:auto; margin-bottom:10px; padding-top:4px; text-align:center; max-width:100%; } .regular-post-thumbnail img.attachment-post-thumbnail { display:block; margin: auto; } .post img.wp-caption{ padding:4px; } .post .wp-caption img, .wp-caption img { border:0 none !important; margin:0 !important; padding:0 !important; max-width:99.5%; } .post img { border:none; padding:0px; vertical-align:bottom; height:auto; max-width:100%; } a.wp-caption { color: #505050; text-decoration:none; } a.wp-caption p,a.wp-caption:hover p, .wp-caption p.wp-caption-text, .full-image-caption { color:#505050; font-size:11px; font-family:Verdana, Geneva, sans-serif; line-height:12px; margin:0; padding:2px 4px 4px; } a.wp-caption:hover { border:1px solid /*#dac2a3;*/#777777; background-color:#f2f2f2; }   /****************************************************************************************** SIDEBAR *******************************************************************************************/ #sidebar .subscribe-rss { padding:10px 0 0px 42px; height:30px; display:block; font-size:20px; font-family:Verdana,Geneva,sans-serif; margin:0 0 10px 0; }  #sidebar a.subscribe-rss:hover { color:#000000; text-decoration:none; } .sidebar { font-family:Georgia, serif; font-size:13px; }  .widget { margin-bottom:10px; line-height:1.5; overflow:hidden; } .textwidget { padding:10px 5px 10px 5px; border-bottom: 1px dotted #eeeeee; line-height:1.5; } .sidebar h5 { font-size:22px; font-family: Georgia, serif; font-weight:normal; border-bottom: 2px solid #eeeeee; padding: 5px 5px 10px 10px; } .sidebar a { color: #73b655;/*#64ae42;*/ font-size:13px; text-decoration:none; } .sidebar .widget_text a, .sidebar .widget_text a:hover { text-decoration:underline; } .sidebar a:hover { color: #000000; text-decoration:none; } .sidebar li { list-style:none; margin:0; padding: 7px 5px; } .sidebar .widget>ul>li, .sidebar ul.menu>li { border-bottom: 1px dotted #eeeeee; } .sidebar .widget>ul>li>.children, .sidebar .widget .sub-menu { padding-top:7px; } .sidebar li>ul li { padding: 7px 5px 7px 10px; } .sidebar li a { /*display: block;*/ } .sidebar .blogroll li { color:  #a0a0a0; font-size: 11px; } #wp-calendar table { border-collapse:collapse; border:0px solid #eeeeee; } #wp-calendar th,  #wp-calendar  td  { border:none; padding:0px 4px; vertical-align:top; font-family: Georgia, serif; font-size:90%; } #wp-calendar td { text-align:right; } #wp-calendar th  { background-color: #eeeeee; color:#ffffff; text-align:center; padding: 1px 4px 1px 4px; } #wp-calendar caption { font-family: Georgia, serif; font-weight:bold; /*color:#777777;*/ padding:10px 0 2px 0; }  #wp-calendar td#prev { text-align:left; } #wp-calendar td#next { text-align:right; } #wp-calendar #today  /*TODO!*/ { border: 1px dotted #dddddd; background-color: #b7dee8; }  /*Search widget*/  #searchform label  { display:block; } #s { width:110px; } #searchsubmit, .button, input#submit { border:1px solid #505050; color:#ffffff; font-weight:bold; font-family:Trebucht MS, Arial; text-shadow:0 -1px 0 rgba(0, 0, 0, 0.3); cursor: pointer; padding:1px 5px 1px 5px; background: #555555;  /* for non-css3 browsers */ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#bbbbbb', endColorstr='#000000'); /* for IE */ background: -webkit-gradient(linear, left top, left bottom, from(#bbbbbb), to(#000000)); /* for webkit browsers */ background: -moz-linear-gradient(top,  #bbbbbb,  #000000); /* for firefox 3.6+ */ } #searchsubmit:hover, .button:hover { border:1px solid #000000; }  #searchsubmit:active, .button:active { cursor: pointer; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#505050', endColorstr='#777777'); /* for IE */ background: -webkit-gradient(linear, left top, left bottom, from(#505050), to(#777777)); /* for webkit browsers */ background: -moz-linear-gradient(top,  #505050,  #777777); /* for firefox 3.6+ */ } /* PAGINATION */  #comments a.page-numbers, #comments span.page-numbers { text-decoration: none; border: 1px solid #eeeeee; padding: 2px 5px; margin: 2px; color: #505050; }  #comments .navigation { margin: 10px 0; }  #comments .navigation a:hover { border: 1px solid #505050; background-color: #f7f7f7; color: #505050; text-decoration:none; } #comments span.page-numbers { font-weight: bold; color: #ffffff; background-color: #505050; border: 1px solid #505050; }  /* WP-PageNavi http://wordpress.org/extend/plugins/wp-pagenavi/ */  .wp-pagenavi { clear: both; }  .wp-pagenavi a, .wp-pagenavi span  { text-decoration: none; border: 1px solid #eeeeee; padding: 2px 5px; margin: 2px; color: #505050; }  .wp-pagenavi a:hover { border: 1px solid #505050; background-color: #f7f7f7; color: #505050; text-decoration:none; }  .wp-pagenavi span.current { font-weight: bold; color: #ffffff; background-color: #505050; border: 1px solid #505050; } .wp-pagenavi .extend { background:transparent;  border:0px none transparent;  color: #505050; margin-right:6px;  padding:0;  text-align:center;  text-decoration:none; }  /* used by PAGBEAR plugin for multipaged posts. http://wordpress.org/extend/plugins/pagebar/ */ .pagebar { padding:0; margin:4px 0; }  .pagebar a { background:transparent;  border: 1px solid #eeeeee; color: #505050; margin: 2px; padding:2px 5px; text-align:center; text-decoration:none; } .pageList .this-page  { font-weight: bold; color: #ffffff; background-color: #505050; border: 1px solid #505050; margin: 2px; padding:2px 5px; text-align:center; text-decoration:none; } .pagebar a:visited { color: #505050; text-decoration:none; }  .pagebar .break { background:transparent;  border:0px none transparent;  color: #505050; margin-right:6px;  padding:0;  text-align:center;  text-decoration:none; }  .pagebar .this-page { font-weight: bold; color: #ffffff; background-color: #505050; border: 1px solid #505050; margin: 2px; padding:2px 5px; text-align:center; text-decoration:none; }  .pagebar a:hover { border: 1px solid #505050; background-color: #f7f7f7; color: #505050; text-decoration:none; }  .pagebar .inactive { border: 1px solid #eeeeee; background-color: #ffffff; color: #cccccc; text-decoration: none; padding:2px 4px; }  #postnavi .prev a  { float:left; } #postnavi .next a { float:right; } #postnavi  a  { background:transparent;  border: 1px solid #eeeeee; color: #505050; margin: 2px; padding:2px 5px; text-align:center; text-decoration:none; } #postnavi a:hover { border: 1px solid #505050; background-color: #f7f7f7; color: #505050; text-decoration:none; } /* FOOTER */   .footer-column  { margin:0; padding:10px; line-height:1.5; }  #blue-footer { float:left; width: 100%; } #green-footer { float:left; width: 100%; } #orange-footer { float:left; width: 100%; } #red-footer { float:left; width: 100%; } #footer h5 { font-size:22px; font-family: Georgia, serif; font-weight:normal; border-bottom: 2px solid #eeeeee; padding: 5px 5px 10px 10px; } #footer  a { color: #73b655;/*#64ae42;*/ font-size:13px; text-decoration:none; } #footer  .widget_text a, #footer .widget_text a:hover { text-decoration:underline; } #footer  a:hover { color: #000000; text-decoration:none; } #footer  li { list-style:none; margin:0; padding: 7px 5px; } #footer .widget>ul>li, #footer  ul.menu>li { border-bottom: 1px dotted #eeeeee; } #footer  .widget>ul>li>.children, #footer  .widget .sub-menu { padding-top:7px; } #footer  li>ul li { padding: 7px 5px 7px 10px; } /*#footer li a { display: block; }*/   </style>	<link rel="stylesheet" href="../wp-content/themes/clear-line/style.css" type="text/css" media="screen" />
+	
+		<link rel='archives' title='August 2011' href='../2011/08/index.html' />
+	<link rel='archives' title='July 2011' href='../2011/07/index.html' />
+	<link rel='archives' title='June 2011' href='../2011/06/index.html' />
+	<link rel='archives' title='May 2011' href='../2011/05/index.html' />
+	<link rel='archives' title='April 2011' href='../2011/04/index.html' />
+	<link rel='archives' title='March 2011' href='../2011/03/index.html' />
+		                        <style type="text/css" media="screen" >
+                                .socialwrap li.icon_text a img, .socialwrap li.iconOnly a img, .followwrap li.icon_text a img, .followwrap li.iconOnly a img{border-width:0 !important;background-color:none;}#follow.top {width:100%; position:fixed; left:0px; top:0px;}#follow.top ul {padding-left:20px;list-style-type:none;}#follow.top ul li {float:left;padding-top:4px;margin-right:10px;list-style-type:none;}#follow.top ul li.follow {color:#000;line-height:24px;}body {padding-top:32px}#follow a {text-decoration:none}
+li.icon_text a span.head{}
+li.icon_text a:hover span {border-bottom:solid 1px blue;}.share {margin:0 3px 3px 0;}
+.phat span {display:inline;}
+ul.row li {float:left;list-style-type:none;}
+li.iconOnly a span.head {display:none}
+#follow.left ul.size16 li.follow{margin:0px auto !important}
+li.icon_text a {padding-left:0;margin-right:3px}
+li.text_only a {background-image:none !important;padding-left:0;}
+li.text_only a img {display:none;}
+li.icon_text a span{background-image:none !important;padding-left:0 !important; }
+li.iconOnly a span.head {display:none}
+ul.socialwrap li {margin:0 3px 3px 0 !important;}
+ul.socialwrap li a {text-decoration:none;}ul.row li {float:left;line-height:auto !important;}
+ul.row li a img {padding:0}.size16 li a,.size24 li a,.size32 li a, .size48 li a, .size60 li a {display:block}ul.socialwrap {list-style-type:none !important;margin:0; padding:0;text-indent:0 !important;}
+ul.socialwrap li {list-style-type:none !important;background-image:none;padding:0;list-style-image:none !important;}
+ul.followwrap {list-style-type:none !important;margin:0; padding:0}
+ul.followwrap li {margin-right:3px;margin-bottom:3px;list-style-type:none !important;}
+#follow.right ul.followwrap li, #follow.left ul.followwrap li {margin-right:0px;margin-bottom:0px;}
+.shareinpost {clear:both;padding-top:0px}.shareinpost ul.socialwrap {list-style-type:none !important;margin:0 !important; padding:0 !important}
+.shareinpost ul.socialwrap li {padding-left:0 !important;background-image:none !important;margin-left:0 !important;list-style-type:none !important;text-indent:0 !important}
+.socialwrap li.icon_text a img, .socialwrap li.iconOnly a img{border-width:0}ul.followrap li {list-style-type:none;list-style-image:none !important;}
+div.clean {clear:left;}
+div.display_none {display:none;}
+                        </style>
+                                                <style type="text/css" media="print" >
+                                body {background: white;font-size: 12pt;color:black;}
+ * {background-image:none;}
+ #wrapper, #content {width: auto;margin: 0 5%;padding: 0;border: 0;float: none !important;color: black;background: transparent none;}
+ a { text-decoration : underline; color : #0000ff; }
+#menu, #navigation, #navi, .menu {display:none}
+                        </style>
+                        <link rel="image_src" href="../../www.gravatar.com/avatar/36c74ec929d95739677af607936df07e6418.png?default=&amp;size=110.jpg" /> 
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="LUDEP &raquo; Feed" href="../feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="LUDEP &raquo; Comments Feed" href="../comments/feed/index.html" />
+<!-- This site is powered by Shareaholic - https://shareaholic.com -->
+<script type='text/javascript' data-cfasync='false'>
+  //<![CDATA[
+    _SHR_SETTINGS = {"endpoints":{"local_recs_url":"http:\/\/www.ludep.com\/wp-admin\/admin-ajax.php?action=shareaholic_permalink_related"}};
+  //]]>
+</script>
+<script type='text/javascript' data-cfasync='false'
+        src='../../dsms0mj1bbhn4.cloudfront.net/assets/pub/shareaholic.js'
+        data-shr-siteid='dfcda9e11023ab5708e53ad765e54924' async='async' >
+</script>
+
+<!-- Shareaholic Content Tags -->
+<meta name='shareaholic:site_name' content='LUDEP' />
+<meta name='shareaholic:language' content='en-US' />
+<meta name='shareaholic:url' content='http://www.ludep.com/tracking-algorithm-considering-the-inclination-of-the-drone/' />
+<meta name='shareaholic:keywords' content='drone, ideas, issues, programming, refining the project, testing' />
+<meta name='shareaholic:article_published_time' content='2011-07-22T17:53:03+00:00' />
+<meta name='shareaholic:article_modified_time' content='2011-08-31T17:43:20+00:00' />
+<meta name='shareaholic:shareable_page' content='true' />
+<meta name='shareaholic:article_author_name' content='Michael' />
+<meta name='shareaholic:site_id' content='dfcda9e11023ab5708e53ad765e54924' />
+<meta name='shareaholic:wp_version' content='7.6.1.2' />
+<meta name='shareaholic:image' content='http://www.ludep.com/wp-content/uploads/2011/07/12.png' />
+<!-- Shareaholic Content Tags End -->
+
+<!-- Shareaholic Open Graph Tags -->
+<meta property='og:image' content='http://www.ludep.com/wp-content/uploads/2011/07/12.png' />
+<!-- Shareaholic Open Graph Tags End -->
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11.2.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11.2.0\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/www.ludep.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.1.8"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css'  href='../wp-includes/css/dist/block-library/style.min9738.css?ver=5.1.8' type='text/css' media='all' />
+<link rel='stylesheet' id='wpt-twitter-feed-css'  href='../wp-content/plugins/wp-to-twitter/css/twitter-feed9738.css?ver=5.1.8' type='text/css' media='all' />
+<!-- This site uses the Google Analytics by MonsterInsights plugin v5.5.4 - Universal enabled - https://www.monsterinsights.com/ -->
+<script type="text/javascript">
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','../../www.google-analytics.com/analytics.js','__gaTracker');
+
+	__gaTracker('create', 'UA-22499108-1', 'auto');
+	__gaTracker('set', 'forceSSL', true);
+	__gaTracker('send','pageview');
+
+</script>
+<!-- / Google Analytics by MonsterInsights -->
+<script type='text/javascript' src='../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../wp-includes/js/jquery/ui/core.mine899.js?ver=1.11.4'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var social_connect_data = {"wordpress_enabled":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../wp-content/plugins/social-connect/media/js/connect9738.js?ver=5.1.8'></script>
+<link rel='https://api.w.org/' href='../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../xmlrpc0db0.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='Arrival of the new omniwheels' href='../arrival-of-the-new-omniwheels/index.html' />
+<link rel='next' title='Merging our work together: the beginnings of worthy and notable results.' href='../merging-our-work-together-the-beginnings-of-worthy-and-notable-results/index.html' />
+
+<link rel="canonical" href="index.html" />
+<link rel='shortlink' href='../indexb648.html?p=773' />
+<link rel="alternate" type="application/json+oembed" href="../wp-json/oembed/1.0/embed61c0.json?url=http%3A%2F%2Fwww.ludep.com%2Ftracking-algorithm-considering-the-inclination-of-the-drone%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../wp-json/oembed/1.0/embededf7?url=http%3A%2F%2Fwww.ludep.com%2Ftracking-algorithm-considering-the-inclination-of-the-drone%2F&amp;format=xml" />
+<meta property="og:type" content="article"/><meta property="og:url" content="http://www.ludep.com/tracking-algorithm-considering-the-inclination-of-the-drone/"/><meta property="og:title" content="Tracking algorithm: considering the inclination of the drone"/><meta property="og:description" content="Michael | Drone, Ideas, Issues, Programming, Refining the project, Testing"/><meta property="og:image" content="http://www.ludep.com/wp-content/uploads/2011/07/12-150x150.png"/><link rel="shortcut icon" href="../wp-content/plugins/multicons/images/favicon.ico" />
+
+
+
+<link rel='stylesheet' id='social_connect-css'  href='../wp-content/plugins/social-connect/media/css/style9738.css?ver=5.1.8' type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css'  href='../wp-includes/css/dashicons.min9738.css?ver=5.1.8' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-jquery-ui-dialog-css'  href='../wp-includes/css/jquery-ui-dialog.min9738.css?ver=5.1.8' type='text/css' media='all' />
+		<style type="text/css">
+						ol.footnotes li {list-style-type:decimal;}
+						ol.footnotes{font-size:0.8em; color:#666666;}		</style>
+		<link rel="Shortcut Icon" type="image/x-icon" href="../favicon.ico" />
+</head>
+<body class="post-template-default single single-post postid-773 single-format-standard">
+	<div id="container" class="hfeed">
+	<div id="header">
+		<div id="masthead">
+						<div style="float:left;">
+																						<h3><a href="../index.html">LUDEP</a></h3>
+													<div class="description">Leading Units &amp; Drone Enabled Probing</div>
+												</div>
+			<div class="clear"></div>
+		</div>
+					<div id="access">
+				<div class="menu"><ul>
+<li class="page_item page-item-6"><a href="../index.html">Home</a></li>
+<li class="page_item page-item-9 current_page_parent"><a href="../blog/index.html">Blog</a></li>
+<li class="page_item page-item-47"><a href="../project/index.html">The project</a></li>
+<li class="page_item page-item-50"><a href="../links-downloads/index.html">Links &#038; Downloads</a></li>
+<li class="page_item page-item-30"><a href="../about/index.html">About</a></li>
+</ul></div>
+				<div class="clear"></div>
+			</div>
+				<div class="clear"></div>
+	</div>
+		<div class="sidebar">
+					</div>
+
+
+<!-- end header --><div id="wrapper">
+	<div id="content-wrapper">
+		<div id="content" role="main">
+			
+		<div id="postpath">
+			<a title="Goto homepage" href="../index.html">Home</a>
+			 &raquo; <a href="../category/drone/index.html">Drone</a>, <a href="../category/ideas/index.html">Ideas</a>, <a href="../category/issues/index.html">Issues</a>, <a href="../category/programming/index.html">Programming</a>, <a href="../category/refining-the-project/index.html">Refining the project</a>, <a href="../category/testing/index.html">Testing</a>			&raquo; Tracking algorithm: considering the inclination of the drone		</div>
+	
+
+	<!--div class="post"-->
+	<div id="post-773" class="post post-773 type-post status-publish format-standard has-post-thumbnail hentry category-drone category-ideas category-issues category-programming category-refining-the-project category-testing">
+		 <h1>Tracking algorithm: considering the inclination of the drone</h1>
+					<table class="info entry-meta">
+				<tr>
+					<td class="date">July 22, 2011</td>
+					<td>
+													<span class="postedby">
+								Posted by <a href="http://michael/" title="Visit Michael&#8217;s website" rel="author external">Michael</a> 
+							</span>
+								<span class="filledunder">under</span>
+												<span class="filledunder">
+							<a href="../category/drone/index.html" rel="category tag">Drone</a>, <a href="../category/ideas/index.html" rel="category tag">Ideas</a>, <a href="../category/issues/index.html" rel="category tag">Issues</a>, <a href="../category/programming/index.html" rel="category tag">Programming</a>, <a href="../category/refining-the-project/index.html" rel="category tag">Refining the project</a>, <a href="../category/testing/index.html" rel="category tag">Testing</a>						</span>
+					</td>
+											<td>
+						
+				
+							<div class="act">
+																	<span class="comments">Comments off</span>
+																							</div>
+						</td>
+					
+				</tr>
+			</table>
+		
+		<div class="content">
+			<div style="float:right;padding: 0 0 10px 10px" class="interactive_right"><iframe allowtransparency="true" frameborder="0" scrolling="no" src="http://platform.twitter.com/widgets/tweet_button.html?url=http%3A%2F%2Fwww.ludep.com%2Ftracking-algorithm-considering-the-inclination-of-the-drone%2F&amp;text=Tracking%20algorithm:%20considering%20the%20inclination%20of%20the%20drone&amp;count=vertical&amp;lang=" style="width:65px; height:65px;"></iframe><iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.ludep.com%2Ftracking-algorithm-considering-the-inclination-of-the-drone%2F&amp;layout=box_count&amp;show_faces=false&amp;width=65&amp;action=like&amp;font=arial&amp;colorscheme=light&amp;height=65" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:65px; height:65px;" allowTransparency="true"></iframe></div><h2>Setting down the problem</h2>
+<p style="text-align: justify;">Our PID controller has proven to be working but without achieving an almost perfect stability, even when it comes to stay on top of a still roundel. A hypothesis was then made to explain our difficulty to fulfill our goal, apart from having to correctly tune the gain parameters. So far, we have not taken into account the fact that the drone tilts a little while it moves. Yet, an inclination on one or two axis moves also the vertical camera, which then changes the roundel position returned by our algorithm.</p>
+<p style="text-align: justify;">Indeed, if the drone is located of top of the same spot where there is a roundel, the coordinates returned will vary more or less depending on the tilt angle. The greater the tilting, the bigger the offset. And a PID controller cannot behaves well if its core principle, that is the parameter measured which has to be corrected, is changing in an unexpected way because of the results of the PID correction.</p>
+<h2>Situation modeling</h2>
+<h3>Geometric representation</h3>
+<p style="text-align: justify;">The figures below illustrate the problem that occurs while the drone is moving. First, Figure 1 pictures the ideal situation, where the camera keeps itself perfectly vertical at any time. The field of view (FOV) of the camera is represented by a 1000*1000 matrix whose size does not change accordingly to the altitude. The coordinates returned by the detection algorithm are therefore given without units (in blue on the picture) and only specify relatives distances. To apply our own correction, we will need to work with SI units. This will be possible by using the altitude value that the drone navigation data knows at any time, and the FOV angle, which is equal to 64 degrees.</p>
+<p><a href="../wp-content/uploads/2011/07/CameraFOV_fig1_shrunk.png"><img class="aligncenter size-large wp-image-798" title="CameraFOV_Figure1" src="../wp-content/uploads/2011/07/CameraFOV_fig1_shrunk-949x1024.png" alt="" width="640" height="690" srcset="http://www.ludep.com/wp-content/uploads/2011/07/CameraFOV_fig1_shrunk-949x1024.png 949w, http://www.ludep.com/wp-content/uploads/2011/07/CameraFOV_fig1_shrunk-278x300.png 278w, http://www.ludep.com/wp-content/uploads/2011/07/CameraFOV_fig1_shrunk-92x100.png 92w" sizes="(max-width: 640px) 100vw, 640px" /></a></p>
+<p>&nbsp;</p>
+<p style="text-align: justify;">Figure 2 shows how tilting the vertical camera distorts the coordinate system on the ground. Furthermore, the roundel is clearly not at the same location anymore when it is viewed from the drone viewpoint, whereas the drone and the roundel are still over the same spot.</p>
+<p>&nbsp;</p>
+<p><a href="../wp-content/uploads/2011/07/CameraFOV_fig2_shrunk.png"><img class="aligncenter size-large wp-image-799" title="CameraFOV_Figure2" src="../wp-content/uploads/2011/07/CameraFOV_fig2_shrunk-952x1024.png" alt="" width="640" height="688" srcset="http://www.ludep.com/wp-content/uploads/2011/07/CameraFOV_fig2_shrunk-952x1024.png 952w, http://www.ludep.com/wp-content/uploads/2011/07/CameraFOV_fig2_shrunk-278x300.png 278w, http://www.ludep.com/wp-content/uploads/2011/07/CameraFOV_fig2_shrunk-92x100.png 92w" sizes="(max-width: 640px) 100vw, 640px" /></a></p>
+<p>&nbsp;</p>
+<p style="text-align: justify;">On Figure 3, it is possible to see that the inclination angle and the position of the roundel may affect the representation of the situation: the subsequent angles are not calculated as in the previous case. All those figures are obviously symmetrical, and what happens on one side of the x axis happens the same way on the other side.</p>
+<p>&nbsp;</p>
+<p><a href="../wp-content/uploads/2011/07/CameraFOV_fig3_shrunk.png"><img class="aligncenter size-large wp-image-800" title="CameraFOV_Figure3" src="../wp-content/uploads/2011/07/CameraFOV_fig3_shrunk-949x1024.png" alt="" width="640" height="690" srcset="http://www.ludep.com/wp-content/uploads/2011/07/CameraFOV_fig3_shrunk-949x1024.png 949w, http://www.ludep.com/wp-content/uploads/2011/07/CameraFOV_fig3_shrunk-278x300.png 278w, http://www.ludep.com/wp-content/uploads/2011/07/CameraFOV_fig3_shrunk-92x100.png 92w" sizes="(max-width: 640px) 100vw, 640px" /></a></p>
+<p style="text-align: justify;">The goal is now to analyse all these possible cases and find a corrective function that can be applied to the coordinate thats the algorithm receives, no matter what they are.</p>
+<h3>Mathematical analysis</h3>
+<p style="text-align: justify;">First, we need a function that returns a converting factor that will be used to transform a value into millimeters from a measurement given in arbitrary units (as returned by the embedded algorithm on the drone).</p>
+<p><a href="../wp-content/uploads/2011/07/1.png"><img class="aligncenter size-full wp-image-774" title="1" src="../wp-content/uploads/2011/07/1.png" alt="" width="277" height="58" srcset="http://www.ludep.com/wp-content/uploads/2011/07/1.png 277w, http://www.ludep.com/wp-content/uploads/2011/07/1-100x20.png 100w, http://www.ludep.com/wp-content/uploads/2011/07/1-270x58.png 270w" sizes="(max-width: 277px) 100vw, 277px" /></a></p>
+<p style="text-align: justify;">Then, when we need to convert a value read by the camera into millimeters at a given altitude, we just need to apply the following:</p>
+<p style="text-align: justify;"><a href="../wp-content/uploads/2011/07/2.png"><img class="aligncenter size-full wp-image-775" title="2" src="../wp-content/uploads/2011/07/2.png" alt="" width="257" height="42" srcset="http://www.ludep.com/wp-content/uploads/2011/07/2.png 257w, http://www.ludep.com/wp-content/uploads/2011/07/2-100x16.png 100w" sizes="(max-width: 257px) 100vw, 257px" /></a></p>
+<p>With                                                                            <a href="../wp-content/uploads/2011/07/3.png"><img class="aligncenter size-full wp-image-776" title="3" src="../wp-content/uploads/2011/07/3.png" alt="" width="172" height="38" srcset="http://www.ludep.com/wp-content/uploads/2011/07/3.png 172w, http://www.ludep.com/wp-content/uploads/2011/07/3-100x22.png 100w" sizes="(max-width: 172px) 100vw, 172px" /></a></p>
+<p style="text-align: justify;">To keep our explanation simple, we take only two dimensions into account, that are the height and a length along the x axis. The reasoning and calculus are exactly the same with the y axis, apart from one minus sign.</p>
+<p style="text-align: justify;">Let us now consider a tilted camera that makes a φ angle with a vertical line perpendicular to the ground. Figure 2.b illustrates the problem we have to solve: even if neither the roundel nor the drone have moved -except for the tilting-, the coordinates returned by the tracking algorithm will be much different from what is expected (Figure 1.b).</p>
+<p style="text-align: justify;">The value <em>xRead </em> returned by the camera is not actually the one corresponding to the real distance as seen on the ground, since the scale on the projected field of view on the ground is now distorted because of the tilting. To keep an orthonormal coordinate system with evenly scaled values, we have to consider a plane perpendicular to the line that go straight into the camera lens. Then, no matter where this plane is located along this line, every single point that belongs to this newly enclosed space will keep the same <em>relative</em> distance to the origin zero.</p>
+<p style="text-align: justify;">We define a new angle α as showed on Figure 2.a, such as:</p>
+<p><a href="../wp-content/uploads/2011/07/4.png"><img class="aligncenter size-full wp-image-778" title="4" src="../wp-content/uploads/2011/07/4.png" alt="" width="188" height="66" srcset="http://www.ludep.com/wp-content/uploads/2011/07/4.png 188w, http://www.ludep.com/wp-content/uploads/2011/07/4-100x35.png 100w" sizes="(max-width: 188px) 100vw, 188px" /></a></p>
+<p style="text-align: justify;">We also define <em>xReal</em> as the actual position of the roundel on the x-axis in a situation where the camera is perfectly vertical.</p>
+<p style="text-align: justify;"><a href="../wp-content/uploads/2011/07/5.png"><img class="aligncenter size-full wp-image-780" title="5" src="../wp-content/uploads/2011/07/5.png" alt="" width="177" height="40" srcset="http://www.ludep.com/wp-content/uploads/2011/07/5.png 177w, http://www.ludep.com/wp-content/uploads/2011/07/5-100x22.png 100w" sizes="(max-width: 177px) 100vw, 177px" /></a></p>
+<p style="text-align: justify;">Where                                                                        <a href="../wp-content/uploads/2011/07/6.png"><img class="aligncenter size-full wp-image-781" title="6" src="../wp-content/uploads/2011/07/6.png" alt="" width="173" height="40" srcset="http://www.ludep.com/wp-content/uploads/2011/07/6.png 173w, http://www.ludep.com/wp-content/uploads/2011/07/6-100x23.png 100w" sizes="(max-width: 173px) 100vw, 173px" /></a> And <em>xOut_1||2</em>  is the equivalent of <em>xRead</em> distorted on the ground (one cannot talk about “projection” since not perpendicular angle is considered there). The value of <em>xOut_1||2</em> is actually different depending on the camera inclination and the roundel location (Figure 2.a involves <em>xOut_1</em>, Figure 3.a shows <em>xOut_2</em>) . Keep in mind that <em>xRead</em>, <em>xReal</em>, <em>xIn</em> and <em>xOut</em> can be negative depending on the tilt angle φ. Besides, the value φ is returned positive by the drone navigation data when the drone is in a situation likewise to Figure 2.a, and negative when the tilting is in the opposite direction. Using the law of sines<sup><a href="#footnote_0_773" id="identifier_0_773" class="footnote-link footnote-identifier-link" title="http://en.wikipedia.org/wiki/Law_of_sines">1</a></sup>, that states that the ratio of the length of a side to the sine of its corresponding opposite angle is constant, we get, from the green triangle in Figure 2.a: <a href="../wp-content/uploads/2011/07/7.png"><img class="aligncenter size-full wp-image-782" title="7" src="../wp-content/uploads/2011/07/7.png" alt="" width="184" height="63" srcset="http://www.ludep.com/wp-content/uploads/2011/07/7.png 184w, http://www.ludep.com/wp-content/uploads/2011/07/7-100x34.png 100w" sizes="(max-width: 184px) 100vw, 184px" /></a>And since <a href="../wp-content/uploads/2011/07/8.png"><img class="aligncenter size-full wp-image-783" title="8" src="../wp-content/uploads/2011/07/8.png" alt="" width="151" height="39" srcset="http://www.ludep.com/wp-content/uploads/2011/07/8.png 151w, http://www.ludep.com/wp-content/uploads/2011/07/8-150x39.png 150w, http://www.ludep.com/wp-content/uploads/2011/07/8-100x25.png 100w" sizes="(max-width: 151px) 100vw, 151px" /></a> We get                                                                        <a href="../wp-content/uploads/2011/07/9.png"><img class="aligncenter size-full wp-image-784" title="9" src="../wp-content/uploads/2011/07/9.png" alt="" width="207" height="43" srcset="http://www.ludep.com/wp-content/uploads/2011/07/9.png 207w, http://www.ludep.com/wp-content/uploads/2011/07/9-100x20.png 100w" sizes="(max-width: 207px) 100vw, 207px" /></a> The same goes with <em>xOut_2</em>, except that the angles are different (cf. Figure 3.a): <a href="../wp-content/uploads/2011/07/10.png"><img class="aligncenter size-full wp-image-785" title="10" src="../wp-content/uploads/2011/07/10.png" alt="" width="191" height="63" srcset="http://www.ludep.com/wp-content/uploads/2011/07/10.png 191w, http://www.ludep.com/wp-content/uploads/2011/07/10-100x32.png 100w" sizes="(max-width: 191px) 100vw, 191px" /></a> Hence the result that applies in a case similar to Figure 2.a: <a href="../wp-content/uploads/2011/07/11.png"><img class="aligncenter size-full wp-image-786" title="11" src="../wp-content/uploads/2011/07/11.png" alt="" width="363" height="60" srcset="http://www.ludep.com/wp-content/uploads/2011/07/11.png 363w, http://www.ludep.com/wp-content/uploads/2011/07/11-300x49.png 300w, http://www.ludep.com/wp-content/uploads/2011/07/11-100x16.png 100w" sizes="(max-width: 363px) 100vw, 363px" /></a> When we generalize the calculus and consider every possible situation, we get the following conclusion: <a href="../wp-content/uploads/2011/07/12.png"><img class="aligncenter size-full wp-image-787" title="12" src="../wp-content/uploads/2011/07/12.png" alt="" width="724" height="160" srcset="http://www.ludep.com/wp-content/uploads/2011/07/12.png 724w, http://www.ludep.com/wp-content/uploads/2011/07/12-300x66.png 300w, http://www.ludep.com/wp-content/uploads/2011/07/12-100x22.png 100w, http://www.ludep.com/wp-content/uploads/2011/07/12-270x60.png 270w" sizes="(max-width: 724px) 100vw, 724px" /></a></p>
+<h3>Experiments and performance results</h3>
+<h4 style="text-align: justify;">Protocol</h4>
+<p style="text-align: justify;">To test our model in a real world setup, we built and filled a datalog in real-time during different test flights to keep track of the raw values returned by the detection algorithm and the corrected values. Besides, we also saved the angles made by the drone on both axis. Again, to keep the results readable, we chose to display data referring only to the x-axis, so it makes sense to compare our previous data. We performed the same experiments on the y-axis, for the same performance.</p>
+<p style="text-align: justify;">Both graphs below reports these data on the same timeline, during one of our running test times. Basically, we took the drone, activated our recognition algorithm, and did the following, in this order:</p>
+<ol style="text-align: justify;">
+<li>The drone is put on top of the roundel, at a steady altitude. We then rotate it around one axis at a regular pace, from one side to the other (no more than 60 degrees on each side), in order to register different lateral angles.</li>
+<li>The drone is then put on the far right of the roundel, without changing the altitude nor the y axis position. Rotations are then applied as before.</li>
+<li>Step 2 is repeated, except that it is done one the far left of the roundel.</li>
+</ol>
+<h4>Experiments</h4>
+<p style="text-align: justify;">The experiment results are reported on the graphs below. Please note that values are actually registered when a roundel is detected. That is why the range of the angle vary for each step, even if the drone is each time moved the same way. The achieved results for these steps are:</p>
+<div>
+<ol>
+<li style="text-align: justify;">As expected, the more the drone is tilted (in green on the graph), the further from the zero origin the roundel is detected (in blue on the graph). The corrected value (<em>xReal</em>) is staying really close to zero, which is what we wanted to perform.</li>
+<li style="text-align: justify;">The corrected value stays close to the real one, with a range of 50 cm at maximum, way better than a range of 2 meters as it is the case with the raw values.</li>
+<li style="text-align: justify;">Observed results are symmetrical to those of step 2.</li>
+</ol>
+</div>
+<p><a href="../wp-content/uploads/2011/07/tilt_graphs.png"><img class="aligncenter size-large wp-image-788" title="tilt_graphs" src="../wp-content/uploads/2011/07/tilt_graphs-1024x437.png" alt="" width="640" height="273" srcset="http://www.ludep.com/wp-content/uploads/2011/07/tilt_graphs-1024x437.png 1024w, http://www.ludep.com/wp-content/uploads/2011/07/tilt_graphs-300x128.png 300w, http://www.ludep.com/wp-content/uploads/2011/07/tilt_graphs-100x42.png 100w, http://www.ludep.com/wp-content/uploads/2011/07/tilt_graphs.png 1286w" sizes="(max-width: 640px) 100vw, 640px" /></a></p>
+<h4 style="text-align: justify;">Closing comments</h4>
+<p style="text-align: justify;">What can also be noted is that the sensors perform really well: they return accurate and consistent values at any time. This is especially true with the altitude, since the tilt sensors seem to lose accuracy when they are shaken too fast or if the angle is too big, which accounts for bigger errors in the correction. Overall, they all refresh themselves fast enough to be consistent with each other at a given time, and the communication delay does not really interfere with this process.</p>
+<p style="text-align: justify;">As for the drone itself, once the correction is applied for the PID controller, we clearly noted that a lot of steadiness has been gained through this process, with a reduced settling time and a less random behavior. This itself confirmed the relevance of our study and the efficiency provided by the sensors and by our algorithm. We will soon provide new results about our tracking controller, with some further investigation into other solutions.</p>
+<h2>Approximating our model</h2>
+<h3>Simplification of the situation</h3>
+<p style="text-align: justify;">The high mathematical precision that we got with our previous model is not required because the sensors do not allow for such precision. Hence a simplification may be welcome, be it only out of concern for maximum clarity in the explanation. Besides, it saves having to rely more than once on values returned by the sensors. If a sensor value is slightly offset, it is indeed better to use it once and for all in our equations, rather than reporting errors many times and increasing its effects on the results (especially here with the <em>altitude</em> and <em>xRead<sub>mm</sub></em> that were each called three times before, because of the α angle). Figure 4.a shows how the model can be simplified.</p>
+<p><a href="../wp-content/uploads/2011/07/CameraFOV_fig4.png"><img class="aligncenter size-large wp-image-805" title="CameraFOV_Figure4" src="../wp-content/uploads/2011/07/CameraFOV_fig4-952x1024.png" alt="" width="640" height="688" srcset="http://www.ludep.com/wp-content/uploads/2011/07/CameraFOV_fig4-952x1024.png 952w, http://www.ludep.com/wp-content/uploads/2011/07/CameraFOV_fig4-278x300.png 278w, http://www.ludep.com/wp-content/uploads/2011/07/CameraFOV_fig4-92x100.png 92w" sizes="(max-width: 640px) 100vw, 640px" /></a></p>
+<p>&nbsp;</p>
+<p style="text-align: justify;">We therefore have only one function to compute <em>xReal</em>, whose domain of definition is broader, because neither the tilting angle φ nor the sign of <em>xRead<sub>mm</sub></em> change the model anymore :</p>
+<p style="text-align: center;" align="center"><a href="../wp-content/uploads/2011/07/13.png"><img class="aligncenter size-full wp-image-807" title="13" src="../wp-content/uploads/2011/07/13.png" alt="" width="122" height="61" srcset="http://www.ludep.com/wp-content/uploads/2011/07/13.png 151w, http://www.ludep.com/wp-content/uploads/2011/07/13-150x76.png 150w, http://www.ludep.com/wp-content/uploads/2011/07/13-100x50.png 100w" sizes="(max-width: 122px) 100vw, 122px" /></a><a href="../wp-content/uploads/2011/07/14.png"><img class="aligncenter size-full wp-image-808" title="14" src="../wp-content/uploads/2011/07/14.png" alt="" width="429" height="55" srcset="http://www.ludep.com/wp-content/uploads/2011/07/14.png 530w, http://www.ludep.com/wp-content/uploads/2011/07/14-300x38.png 300w, http://www.ludep.com/wp-content/uploads/2011/07/14-100x12.png 100w" sizes="(max-width: 429px) 100vw, 429px" /></a></p>
+<h3>Performance</h3>
+<p style="text-align: justify;">This alternative model performed surprisingly very well, insofar as we got on average a shift of about 2 millimeters between both models. It even appears on average more accurate when we are dealing with positions further from the roundel, that are critical ones since the angle is greater there, and the sensor accuracy worse. This is explained by the fact that this new equation is less sensitive to small variations of the parameters.</p>
+<p style="text-align: justify;"><a href="../wp-content/uploads/2011/07/tilt_graphs_bothModel_comparison1.png"><img class="aligncenter size-large wp-image-833" title="tilt_graphs_bothModel_comparison" src="../wp-content/uploads/2011/07/tilt_graphs_bothModel_comparison1-1024x215.png" alt="" width="640" height="134" srcset="http://www.ludep.com/wp-content/uploads/2011/07/tilt_graphs_bothModel_comparison1-1024x215.png 1024w, http://www.ludep.com/wp-content/uploads/2011/07/tilt_graphs_bothModel_comparison1-300x63.png 300w, http://www.ludep.com/wp-content/uploads/2011/07/tilt_graphs_bothModel_comparison1-100x21.png 100w, http://www.ludep.com/wp-content/uploads/2011/07/tilt_graphs_bothModel_comparison1.png 1292w" sizes="(max-width: 640px) 100vw, 640px" /></a></p>
+<p>As a conclusion, we plan on keeping this last implementation because of its really good performance, both in terms of simplicity and accuracy.</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp;<br />
+<b>References</b></p>
+<ol class="footnotes">
+<li id="footnote_0_773" class="footnote"><a href="http://en.wikipedia.org/wiki/Law_of_sines" onclick="__gaTracker('send', 'event', 'outbound-article', 'http://en.wikipedia.org/wiki/Law_of_sines', 'http://en.wikipedia.org/wiki/Law_of_sines');">http://en.wikipedia.org/wiki/Law_of_sines</a> [<a href="#identifier_0_773" class="footnote-link footnote-back-link">&#8617;</a>]</li>
+</ol>
+<div class='shareaholic-canvas' data-app-id='17416092' data-app='share_buttons' data-title='Tracking algorithm: considering the inclination of the drone' data-link='http://www.ludep.com/tracking-algorithm-considering-the-inclination-of-the-drone/' data-summary=''></div><div class='shareaholic-canvas' data-app-id='17416100' data-app='recommendations' data-title='Tracking algorithm: considering the inclination of the drone' data-link='http://www.ludep.com/tracking-algorithm-considering-the-inclination-of-the-drone/' data-summary=''></div>			<div class="clear"></div>
+			<div class="postpages">
+							</div>
+							<div class="under">
+										<div class="clear"></div>
+				</div>
+					</div>
+		
+	</div>
+	
+			<div id="comments">
+
+
+	<p class="nocomments">Comments are closed.</p>
+
+
+
+</div><!-- #comments -->
+	<div id="postnavi" class="navigation">
+		<div class="nav prev left"><a href="../merging-our-work-together-the-beginnings-of-worthy-and-notable-results/index.html" rel="next">&laquo;  Merging our work together: the beginnings of worthy and notable results.</a></div>
+		<div class="nav next right"><a href="../arrival-of-the-new-omniwheels/index.html" rel="prev"> Arrival of the new omniwheels &raquo;</a></div>
+		<div class="fixed"></div>
+	</div>
+
+		
+		</div>
+	</div>
+</div>
+
+
+<div class="clear"></div>
+<div id="outer-footer">
+<div id="footer">
+
+<div id="blue-footer">
+	<div class="footer-column">
+		
+	</div>
+</div>
+<div class="clear"></div>
+</div> <!-- footer -->
+</div> <!-- outer-footer -->
+<div id="copyright" style="margin:5px; text-align:center; float:left;">
+<b>LUDEP</b> powered by <a href="http://wordpress.org/">WordPress</a> and 
+<a href="http://vatuma.com/">The Clear Line Theme</a><br/><br/>
+</div>
+<div style="float:right;">
+	<div id="follow-widget-3" style="float:left;"><ul class="followwrap size24 row"><li class="icon_text"><a rel="nofollow me" target="_blank"  style="background: transparent url(../wp-content/plugins/share-and-follow/default/24/facebook.png) no-repeat top left;padding-left:28px;line-height:28px;" class="facebook" href="https://www.facebook.com/pages/Ludep/205635196128367" title="Become a fan"><span class="head">Become a fan</span></a></li><li class="icon_text"><a rel="nofollow me" target="_blank"  style="background: transparent url(../wp-content/plugins/share-and-follow/default/24/rss.png) no-repeat top left;padding-left:28px;line-height:28px;" class="rss" href="../feed/atom/index.html" title="RSS/Atom feed"><span class="head">RSS/Atom feed</span></a></li><li class="icon_text"><a rel="nofollow me" target="_blank"  style="background: transparent url(../wp-content/plugins/share-and-follow/default/24/twitter.png) no-repeat top left;padding-left:28px;line-height:28px;" class="twitter" href="http://www.twitter.com/LUDEPdotCOM" title="Follow us"><span class="head">Follow us</span></a></li><li class="icon_text"><a rel="nofollow me" target="_blank"  style="background: transparent url(../wp-content/plugins/share-and-follow/default/24/youtube.png) no-repeat top left;padding-left:28px;line-height:28px;" class="youtube" href="http://www.youtube.com/LUDEPdotCOM" title="Youtube channel"><span class="head">Youtube channel</span></a></li></ul><div class="clean"></div> </div>	<div class="clear"></div>
+</div>
+<div class="clear"></div>
+	<input type="hidden" id="social_connect_login_form_uri" value="http://www.ludep.com/wp-login.php" />
+	<script type='text/javascript' src='../wp-includes/js/comment-reply.min9738.js?ver=5.1.8'></script>
+<script type='text/javascript' src='../wp-includes/js/wp-embed.min9738.js?ver=5.1.8'></script>
+
+		</div> <!--container -->
+</body>
+
+<!-- Mirrored from www.ludep.com/tracking-algorithm-considering-the-inclination-of-the-drone/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 15 Mar 2021 00:49:23 GMT -->
+</html>
