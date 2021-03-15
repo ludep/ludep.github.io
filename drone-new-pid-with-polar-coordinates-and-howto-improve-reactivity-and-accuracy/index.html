@@ -1,0 +1,330 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<!-- <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> -->
+
+<!-- Mirrored from www.ludep.com/drone-new-pid-with-polar-coordinates-and-howto-improve-reactivity-and-accuracy/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 15 Mar 2021 00:49:17 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+
+	<meta charset="UTF-8" />
+	<title>Drone: new PID with polar coordinates and HowTo improve reactivity and accuracy | LUDEP</title>
+	<link rel="profile" href="http://gmpg.org/xfn/11" />
+	<meta name="description" content=" more" />	<meta name="keywords" content=" more, Drone, Ideas, Issues, Programming, Refining the project" />	
+
+	<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="../feed/atom/index.html" />
+	<link rel="pingback" href="../xmlrpc.php" />
+
+	<style type="text/css">/* no_sidebars.css */ div#wrapper { width:100%; }  body { font-size:12px; font-family:Verdana, Geneva, sans-serif; font-weight:normal; color:#505050; background-color:#ffffff; }  /* LAYOUT */ #container { margin: 0 auto; width: 990px; min-width:600px; background-color:#ffffff; } #wrapper { background-color:#ffffff; padding-top:10px; } #content { padding:0 15px 10px 15px; }  .sidebar .column { margin:19px  0 10px 0;}  .sidebar > :first-child h5 { margin-top:0; } #outer-footer { padding-top: 10px } #footer { border-bottom: 4px solid #27a5c4; border-top: 2px solid #27a5c4; background-color: #b7dee8; }  #header { color: #27a5c4; font-family:Georgia, serif; background-color:#ffffff; margin: 0; padding: 0; margin: 0; } #masthead { margin: 0px 0px 0px 10px; padding-left:0px; } #header h1, #header h3 { font-size:64px; margin:0; font-weight:normal; letter-spacing: -2px; padding:10px 0 0 0; } #header a.blankheader { display:block; height: 64px; width:300px; } #header a { text-decoration:none; color: #27a5c4; border-bottom:none; } #header .description { font-family:Georgia, serif; font-size:18px; font-weight:normal; font-style:italic; margin-top: -0.25em; padding-bottom: 5px; }  #header a.subscribe-button  {  display:block; float:right; margin-top:-20px; } #header a.subscribe-button:hover {  margin-top:-10px; } /* NAVIGATION */ /* =Menu -------------------------------------------------------------- */  #access { /*background: #000;*/ margin: 0 auto; width: 100%; display:block; float:left; /*padding: 1px 0 1px 8px;*/ border-top: 4px solid #27a5c4; border-bottom: 2px solid #27a5c4; background-color: #b7dee8; } #access .menu-header, div.menu { font-size: 13px; margin-left: 12px; } #access .menu-header ul, div.menu ul { list-style: none; margin: 0; } #access .menu-header li, div.menu li { float:left; position: relative; margin: 0; } #access a { display:block; text-decoration:none; padding:0 10px; line-height:38px; color: #707070;  font-family:Trebuchet MS, Helvetica, sans-serif; font-size:18px; font-weight:normal;   } #access ul ul { display:none; position:absolute; top:38px; left:0; float:left; z-index: 99999; border-left:  1px solid #27a5c4; border-right: 1px solid #27a5c4; border-bottom:1px solid #27a5c4; background-color: #b7dee8; } #access ul ul ul { left:100%; top:1px; border-top:1px solid #27a5c4;  } #access ul ul a { font-family:Trebuchet MS, Helvetica, sans-serif; font-size:13px; font-weight:normal; } #access ul ul a { /*background:#333;*/ height:auto; line-height:1em; padding:10px; width: 170px; } #access li:hover > a, #access ul ul :hover > a { color:#000000; /*background:#333;*/  } #access ul li:hover > ul { display:block; }  /* menu-item menu-item-type-post_type current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item menu-item-type-post_type current-menu-item page_item page-item-155 current_page_item */  #access .current-menu-item, #access .current_page, #access .current_page_item, #access .current_page_item a, #access .current-menu-ancestor, #access .current_page_ancestor { color: #505050; background-color: #8bd6e0; }  div.post-list-column { float:left; width:50%; } div.post-list-column .margins { padding: 0 10px 15px 10px; } .post-list-column .storycontent, .post-list-column .content { padding:0 0 0 4px; } .post-thumbnail, .regular-post-thumbnail { border: 1px solid #eeeeee; padding:3px; }  .regular-post-thumbnail { float:left; width: 100px; margin:18px 5px 10px 10px; } .wp-post-image { max-width:100%; border: none; }  div.post-list-column .wp-post-image { display:block; }  #postpath, #postpath a { font-family:Trebuchet MS, Helvetica, sans-serif; font-size:13px; font-weight:normal; color:#707070; }  /* LINKS */  a { color:#a17244; text-decoration:underline; } .post a:visited { color: #756455; text-decoration:underline; } .post a:hover { color: #de8435; text-decoration:underline; } .post h1 a:hover,  .post h2 a:hover { border-bottom:none; text-decoration:none; }  /* HEADINGS */  h1,h2,h3, h4, h5, h6 { color: #505050; margin-top:5px; font-family:Georgia, serif; font-weight: normal; } h1, h2.h1 { font-size:36px; font-weight: normal; margin:0px 0 3px 0; padding:10px 0 0 5px; color: #505050; overflow:hidden; } .post-list-column h2 { font-size: 24px; font-weight: normal; margin:0px 0 0px 0; padding:3px 0 0px 4px; color: #505050; } h2 { /*font-size:24px;*/ margin:5px 0 2px 0; color: #505050; font-size:24px; font-weight: normal; font-family:Georgia, serif; } h3 { margin:5px 0 0px 0; font-size:18px; font-weight: normal; font-family:Georgia, serif; } .post h3 { color: #98293D; } h4 { font-size:13px; font-weight: bold; font-family:Verdana, Geneva, sans-serif; } h1 a, h2.h1 a, h1 a:visited, h2.h1 a:visited, .post h1 a, .post h2.h1 a, .post h1 a:visited, .post h2.h1 a:visited, .post-list-column h2 a, .post-list-column h2 a:visited { color: #505050; border-bottom: none; text-decoration:none; } h1 a:hover, h2.h1 a:hover, h1 a:visited:hover, h2.h1 a:visited:hover, .post h1 a:hover, .post h2.h1 a:hover, .post h1 a:visited:hover, .post h2.h1 a:visited:hover, .post-list-column h2 a:hover, .post-list-column h2 a:visited:hover { color: #000000; border-bottom: none; text-decoration:none; } h1.page-title { font-size:18px; } h1.page-title span { color: #27a5c4; } /* POST */ div.post { overflow:hidden; } table.info { padding:0; margin:0; border-collapse:collapse; } table.info td,  table.info th { padding:0; margin:0; font-weight:normal; } pre { border:1px dotted #cccccc;; margin:5px 0; padding:10px 10px 10px 20px; background-color:#fbfbfb; } blockquote{ /*background:#f2f2f2 url(img/blockquote.gif) 3px 3px no-repeat;*/ border:1px dotted #cccccc; padding:10px 10px 10px 20px; margin:5px 0 5px 20px; background-color:#fbfbfb; } code { background-color:#fbfbfb; font-family: Courier New, Courier, monospace; border:1px dotted #cccccc; } .post .storycontent, .post .content { padding:5px 10px 5px 10px; overflow:hidden; line-height: 1.5; }  .post .info { padding:3px 0px 3px 0px; margin: 2px 0 2px 0; border-top: 1px solid #eeeeee; }  .post .date { background-position:0 -48px; color: #707070; padding:0 0px; } .post .info  .postedby, .post .info  .filledunder { color: #bbb; } .post .info  .postedby  a, .post .info  .filledunder a { color: #707070; text-decoration:none; } .post .info  .postedby a:hover, .post .info  .filledunder a:hover { color: #000000; text-decoration:none; } .post .info td { border: none; padding: 0 5px; } .post table.info { width:100%; } .post .info .act { white-space: nowrap; text-align:right; } .post table.info .date { width:1%; white-space: nowrap; } .post .act span { padding-left:15px; } .post .info * { font-family: Verdana, Geneva, sans-serif; line-height:16px; font-size:10px; overflow:hidden; } hr { border: 0px none; background-color: #eeeeee; color: #eeeeee; height:2px; } fieldset{ border: 1px solid #eeeeee; padding:5px 10px 5px 10px; } legend { padding: 0px 5px 1px 5px; border: 1px solid #eeeeee; } input.text, input.textbox, input.password, input.file, textarea, input[type=text], input[type=password],input[type=file], select { border:1px solid #bbbbbb; background-color:#ffffff; padding:2px; color: #505050;  } input.text:focus, input.textbox:focus, input.password:focus, input.file:focus, textarea:focus, input[type=text]:focus, input[type=password]:focus,input[type=file]:focus, select { border:1px solid #505050; }  .post table { border-collapse:collapse; border: none; } .post  th, .post  td { border-bottom:1px solid #eeeeee; border-left:none; border-right:none; padding:2px 10px; text-align:left; vertical-align:top;  font-size: 90%;  font-weight: normal; font-family: Trebuchet MS, Helvetica, sans-serif;  } .post tr.even td { background-color: #b7dee8; } .post th  { background-color: #b7dee8; border-bottom: 1px solid #27a5c4; border-top: 2px solid #27a5c4; color: #707070; } #author-avatar { float:left; width: 100px; margin:7px 15px 7px 10px; }  /* comment START */ /* COMMENTS */ #comments > ol {list-style-type: none;line-height: 18px;margin: 0px;padding: 0px 0px 10px 10px; text-align: justify;} #comments ul li {list-style-type: none;list-style-image: none;list-style-position: outside;margin: 0 0 0 5px; padding: 5px 0 0 0;} .commentlist li {margin: 15px 0 10px;padding: 2px 2px 5px 2px;list-style: none;} .commentlist li > ul > li {background:none;list-style:none;margin:3px 0 3px 20px;padding:3px 0;} .commentlist li .avatar {border:none; margin:0;padding:1px 8px 1px 1px; width: 26px;float:left; background:none;} .commentlist .fn { font-size: 14px;  font-weight: bold; font-style: normal; padding:4px 2px 2px 2px;  font-family: Verdana, Geneva, sans-serif; } .commentlist .fn > a  { font-weight:bold; font-style: normal; text-decoration:none; } .commentlist .fn a:hover {/*text-decoration:underline;*/} .commentmetadata  { /*color:#723419;*/ font-weight: normal;  font-family: Trebuchet MS, Helvetica, sans-serif; font-size:11px;  margin:0 0 0px 20px; text-decoration: none; }  .commentmetadata a  { font-weight: normal; text-decoration: none; color: #707070; }   .vcard a.url{ color: #707070; /*#723419;*/ text-decoration: none; } .vcard a.url:hover{ color: #000000; /*#723419;*/ text-decoration: none; }  .bypostauthor >.vcard div.fn >a { color:#98293D; } .bypostauthor >.vcard div.fn >a:hover { color:#000000; } .bypostauthor>div { color:#98293D; } /*  Uncomment following text to assign specific color to admin (or to any other user) You may need to change user name here E.g.  comment-author-MyUserName instead of  comment-author-admin */ /* .comment-author-admin>*, .comment-author-admin >.vcard div.fn >a { color:#106000; }*/ .comment { color:#505050; } .commentmetadata a, .commentmetadata a:visited {color: #707070;} .commentmetadata a:hover{ color: #000000;} #comments .children { padding: 0 0 0 20px; } .thread-alt {background-color:transparent} .thread-even {background-color: transparent;} .depth-1  { border: 1px solid #27a5c4; } .depth-2, .depth-3{/*border-top: 1px solid #dac2a3;*/} .even, .alt {} .vcard { background-color:#b7dee8;} .depth-2 .vcard, .depth-3 .vcard, .depth-4 .vcard, .depth-5 .vcard, .depth-6 .vcard, .depth-7 .vcard, .depth-8 .vcard { border-top: 1px dotted #27a5c4; border-bottom: 1px dotted #27a5c4; } .reply {margin: 0px 0px 0px 10px;} .comment-reply-link { background-color:#b7dee8;color: #707070; padding: 1px 4px; font-size:12px; text-decoration: none; border: 1px dotted #27a5c4; } .comment-reply-link:hover { color: #000000; text-decoration: none; }   #comments .comment-body ul li { list-style:square; margin: 0 0 0 30px; padding:0; } #comments .comment-body ol  { margin: 0; padding: 0; } #comments .comment-body ol li { list-style-type:decimal; padding:0; margin: 0 0 0 30px; display: list-item; } .comment-body { padding:2px 2px 2px 10px; }  /************************** IMAGES *************************************/  .post img.wp-caption, .wp-caption, .gallery-caption { -moz-border-radius: 3px; /* Firefox */ -webkit-border-radius: 3px; /* Safari, Chrome */ -khtml-border-radius: 3px; /* KHTML */ border-radius: 3px; /* CSS3 */    border:1px solid #eeeeee; display:block; height:auto; margin-bottom:10px; padding-top:4px; text-align:center; max-width:100%; } .regular-post-thumbnail img.attachment-post-thumbnail { display:block; margin: auto; } .post img.wp-caption{ padding:4px; } .post .wp-caption img, .wp-caption img { border:0 none !important; margin:0 !important; padding:0 !important; max-width:99.5%; } .post img { border:none; padding:0px; vertical-align:bottom; height:auto; max-width:100%; } a.wp-caption { color: #505050; text-decoration:none; } a.wp-caption p,a.wp-caption:hover p, .wp-caption p.wp-caption-text, .full-image-caption { color:#505050; font-size:11px; font-family:Verdana, Geneva, sans-serif; line-height:12px; margin:0; padding:2px 4px 4px; } a.wp-caption:hover { border:1px solid /*#dac2a3;*/#777777; background-color:#f2f2f2; }   /****************************************************************************************** SIDEBAR *******************************************************************************************/ #sidebar .subscribe-rss { padding:10px 0 0px 42px; height:30px; display:block; font-size:20px; font-family:Verdana,Geneva,sans-serif; margin:0 0 10px 0; }  #sidebar a.subscribe-rss:hover { color:#000000; text-decoration:none; } .sidebar { font-family:Georgia, serif; font-size:13px; }  .widget { margin-bottom:10px; line-height:1.5; overflow:hidden; } .textwidget { padding:10px 5px 10px 5px; border-bottom: 1px dotted #eeeeee; line-height:1.5; } .sidebar h5 { font-size:22px; font-family: Georgia, serif; font-weight:normal; border-bottom: 2px solid #eeeeee; padding: 5px 5px 10px 10px; } .sidebar a { color: #73b655;/*#64ae42;*/ font-size:13px; text-decoration:none; } .sidebar .widget_text a, .sidebar .widget_text a:hover { text-decoration:underline; } .sidebar a:hover { color: #000000; text-decoration:none; } .sidebar li { list-style:none; margin:0; padding: 7px 5px; } .sidebar .widget>ul>li, .sidebar ul.menu>li { border-bottom: 1px dotted #eeeeee; } .sidebar .widget>ul>li>.children, .sidebar .widget .sub-menu { padding-top:7px; } .sidebar li>ul li { padding: 7px 5px 7px 10px; } .sidebar li a { /*display: block;*/ } .sidebar .blogroll li { color:  #a0a0a0; font-size: 11px; } #wp-calendar table { border-collapse:collapse; border:0px solid #eeeeee; } #wp-calendar th,  #wp-calendar  td  { border:none; padding:0px 4px; vertical-align:top; font-family: Georgia, serif; font-size:90%; } #wp-calendar td { text-align:right; } #wp-calendar th  { background-color: #eeeeee; color:#ffffff; text-align:center; padding: 1px 4px 1px 4px; } #wp-calendar caption { font-family: Georgia, serif; font-weight:bold; /*color:#777777;*/ padding:10px 0 2px 0; }  #wp-calendar td#prev { text-align:left; } #wp-calendar td#next { text-align:right; } #wp-calendar #today  /*TODO!*/ { border: 1px dotted #dddddd; background-color: #b7dee8; }  /*Search widget*/  #searchform label  { display:block; } #s { width:110px; } #searchsubmit, .button, input#submit { border:1px solid #505050; color:#ffffff; font-weight:bold; font-family:Trebucht MS, Arial; text-shadow:0 -1px 0 rgba(0, 0, 0, 0.3); cursor: pointer; padding:1px 5px 1px 5px; background: #555555;  /* for non-css3 browsers */ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#bbbbbb', endColorstr='#000000'); /* for IE */ background: -webkit-gradient(linear, left top, left bottom, from(#bbbbbb), to(#000000)); /* for webkit browsers */ background: -moz-linear-gradient(top,  #bbbbbb,  #000000); /* for firefox 3.6+ */ } #searchsubmit:hover, .button:hover { border:1px solid #000000; }  #searchsubmit:active, .button:active { cursor: pointer; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#505050', endColorstr='#777777'); /* for IE */ background: -webkit-gradient(linear, left top, left bottom, from(#505050), to(#777777)); /* for webkit browsers */ background: -moz-linear-gradient(top,  #505050,  #777777); /* for firefox 3.6+ */ } /* PAGINATION */  #comments a.page-numbers, #comments span.page-numbers { text-decoration: none; border: 1px solid #eeeeee; padding: 2px 5px; margin: 2px; color: #505050; }  #comments .navigation { margin: 10px 0; }  #comments .navigation a:hover { border: 1px solid #505050; background-color: #f7f7f7; color: #505050; text-decoration:none; } #comments span.page-numbers { font-weight: bold; color: #ffffff; background-color: #505050; border: 1px solid #505050; }  /* WP-PageNavi http://wordpress.org/extend/plugins/wp-pagenavi/ */  .wp-pagenavi { clear: both; }  .wp-pagenavi a, .wp-pagenavi span  { text-decoration: none; border: 1px solid #eeeeee; padding: 2px 5px; margin: 2px; color: #505050; }  .wp-pagenavi a:hover { border: 1px solid #505050; background-color: #f7f7f7; color: #505050; text-decoration:none; }  .wp-pagenavi span.current { font-weight: bold; color: #ffffff; background-color: #505050; border: 1px solid #505050; } .wp-pagenavi .extend { background:transparent;  border:0px none transparent;  color: #505050; margin-right:6px;  padding:0;  text-align:center;  text-decoration:none; }  /* used by PAGBEAR plugin for multipaged posts. http://wordpress.org/extend/plugins/pagebar/ */ .pagebar { padding:0; margin:4px 0; }  .pagebar a { background:transparent;  border: 1px solid #eeeeee; color: #505050; margin: 2px; padding:2px 5px; text-align:center; text-decoration:none; } .pageList .this-page  { font-weight: bold; color: #ffffff; background-color: #505050; border: 1px solid #505050; margin: 2px; padding:2px 5px; text-align:center; text-decoration:none; } .pagebar a:visited { color: #505050; text-decoration:none; }  .pagebar .break { background:transparent;  border:0px none transparent;  color: #505050; margin-right:6px;  padding:0;  text-align:center;  text-decoration:none; }  .pagebar .this-page { font-weight: bold; color: #ffffff; background-color: #505050; border: 1px solid #505050; margin: 2px; padding:2px 5px; text-align:center; text-decoration:none; }  .pagebar a:hover { border: 1px solid #505050; background-color: #f7f7f7; color: #505050; text-decoration:none; }  .pagebar .inactive { border: 1px solid #eeeeee; background-color: #ffffff; color: #cccccc; text-decoration: none; padding:2px 4px; }  #postnavi .prev a  { float:left; } #postnavi .next a { float:right; } #postnavi  a  { background:transparent;  border: 1px solid #eeeeee; color: #505050; margin: 2px; padding:2px 5px; text-align:center; text-decoration:none; } #postnavi a:hover { border: 1px solid #505050; background-color: #f7f7f7; color: #505050; text-decoration:none; } /* FOOTER */   .footer-column  { margin:0; padding:10px; line-height:1.5; }  #blue-footer { float:left; width: 100%; } #green-footer { float:left; width: 100%; } #orange-footer { float:left; width: 100%; } #red-footer { float:left; width: 100%; } #footer h5 { font-size:22px; font-family: Georgia, serif; font-weight:normal; border-bottom: 2px solid #eeeeee; padding: 5px 5px 10px 10px; } #footer  a { color: #73b655;/*#64ae42;*/ font-size:13px; text-decoration:none; } #footer  .widget_text a, #footer .widget_text a:hover { text-decoration:underline; } #footer  a:hover { color: #000000; text-decoration:none; } #footer  li { list-style:none; margin:0; padding: 7px 5px; } #footer .widget>ul>li, #footer  ul.menu>li { border-bottom: 1px dotted #eeeeee; } #footer  .widget>ul>li>.children, #footer  .widget .sub-menu { padding-top:7px; } #footer  li>ul li { padding: 7px 5px 7px 10px; } /*#footer li a { display: block; }*/   </style>	<link rel="stylesheet" href="../wp-content/themes/clear-line/style.css" type="text/css" media="screen" />
+	
+		<link rel='archives' title='August 2011' href='../2011/08/index.html' />
+	<link rel='archives' title='July 2011' href='../2011/07/index.html' />
+	<link rel='archives' title='June 2011' href='../2011/06/index.html' />
+	<link rel='archives' title='May 2011' href='../2011/05/index.html' />
+	<link rel='archives' title='April 2011' href='../2011/04/index.html' />
+	<link rel='archives' title='March 2011' href='../2011/03/index.html' />
+		                        <style type="text/css" media="screen" >
+                                .socialwrap li.icon_text a img, .socialwrap li.iconOnly a img, .followwrap li.icon_text a img, .followwrap li.iconOnly a img{border-width:0 !important;background-color:none;}#follow.top {width:100%; position:fixed; left:0px; top:0px;}#follow.top ul {padding-left:20px;list-style-type:none;}#follow.top ul li {float:left;padding-top:4px;margin-right:10px;list-style-type:none;}#follow.top ul li.follow {color:#000;line-height:24px;}body {padding-top:32px}#follow a {text-decoration:none}
+li.icon_text a span.head{}
+li.icon_text a:hover span {border-bottom:solid 1px blue;}.share {margin:0 3px 3px 0;}
+.phat span {display:inline;}
+ul.row li {float:left;list-style-type:none;}
+li.iconOnly a span.head {display:none}
+#follow.left ul.size16 li.follow{margin:0px auto !important}
+li.icon_text a {padding-left:0;margin-right:3px}
+li.text_only a {background-image:none !important;padding-left:0;}
+li.text_only a img {display:none;}
+li.icon_text a span{background-image:none !important;padding-left:0 !important; }
+li.iconOnly a span.head {display:none}
+ul.socialwrap li {margin:0 3px 3px 0 !important;}
+ul.socialwrap li a {text-decoration:none;}ul.row li {float:left;line-height:auto !important;}
+ul.row li a img {padding:0}.size16 li a,.size24 li a,.size32 li a, .size48 li a, .size60 li a {display:block}ul.socialwrap {list-style-type:none !important;margin:0; padding:0;text-indent:0 !important;}
+ul.socialwrap li {list-style-type:none !important;background-image:none;padding:0;list-style-image:none !important;}
+ul.followwrap {list-style-type:none !important;margin:0; padding:0}
+ul.followwrap li {margin-right:3px;margin-bottom:3px;list-style-type:none !important;}
+#follow.right ul.followwrap li, #follow.left ul.followwrap li {margin-right:0px;margin-bottom:0px;}
+.shareinpost {clear:both;padding-top:0px}.shareinpost ul.socialwrap {list-style-type:none !important;margin:0 !important; padding:0 !important}
+.shareinpost ul.socialwrap li {padding-left:0 !important;background-image:none !important;margin-left:0 !important;list-style-type:none !important;text-indent:0 !important}
+.socialwrap li.icon_text a img, .socialwrap li.iconOnly a img{border-width:0}ul.followrap li {list-style-type:none;list-style-image:none !important;}
+div.clean {clear:left;}
+div.display_none {display:none;}
+                        </style>
+                                                <style type="text/css" media="print" >
+                                body {background: white;font-size: 12pt;color:black;}
+ * {background-image:none;}
+ #wrapper, #content {width: auto;margin: 0 5%;padding: 0;border: 0;float: none !important;color: black;background: transparent none;}
+ a { text-decoration : underline; color : #0000ff; }
+#menu, #navigation, #navi, .menu {display:none}
+                        </style>
+                        <link rel="image_src" href="../../www.gravatar.com/avatar/36c74ec929d95739677af607936df07e6418.png?default=&amp;size=110.jpg" /> 
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="LUDEP &raquo; Feed" href="../feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="LUDEP &raquo; Comments Feed" href="../comments/feed/index.html" />
+<!-- This site is powered by Shareaholic - https://shareaholic.com -->
+<script type='text/javascript' data-cfasync='false'>
+  //<![CDATA[
+    _SHR_SETTINGS = {"endpoints":{"local_recs_url":"http:\/\/www.ludep.com\/wp-admin\/admin-ajax.php?action=shareaholic_permalink_related"}};
+  //]]>
+</script>
+<script type='text/javascript' data-cfasync='false'
+        src='../../dsms0mj1bbhn4.cloudfront.net/assets/pub/shareaholic.js'
+        data-shr-siteid='dfcda9e11023ab5708e53ad765e54924' async='async' >
+</script>
+
+<!-- Shareaholic Content Tags -->
+<meta name='shareaholic:site_name' content='LUDEP' />
+<meta name='shareaholic:language' content='en-US' />
+<meta name='shareaholic:url' content='http://www.ludep.com/drone-new-pid-with-polar-coordinates-and-howto-improve-reactivity-and-accuracy/' />
+<meta name='shareaholic:keywords' content='drone, ideas, issues, programming, refining the project' />
+<meta name='shareaholic:article_published_time' content='2011-06-26T00:34:23+00:00' />
+<meta name='shareaholic:article_modified_time' content='2011-08-31T17:43:20+00:00' />
+<meta name='shareaholic:shareable_page' content='true' />
+<meta name='shareaholic:article_author_name' content='Michael' />
+<meta name='shareaholic:site_id' content='dfcda9e11023ab5708e53ad765e54924' />
+<meta name='shareaholic:wp_version' content='7.6.1.2' />
+<meta name='shareaholic:image' content='http://www.ludep.com/wp-content/uploads/2011/06/cartesianToPolar_graphic-1024x388.png' />
+<!-- Shareaholic Content Tags End -->
+
+<!-- Shareaholic Open Graph Tags -->
+<meta property='og:image' content='http://www.ludep.com/wp-content/uploads/2011/06/cartesianToPolar_graphic-1024x388.png' />
+<!-- Shareaholic Open Graph Tags End -->
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11.2.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11.2.0\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/www.ludep.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.1.8"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css'  href='../wp-includes/css/dist/block-library/style.min9738.css?ver=5.1.8' type='text/css' media='all' />
+<link rel='stylesheet' id='wpt-twitter-feed-css'  href='../wp-content/plugins/wp-to-twitter/css/twitter-feed9738.css?ver=5.1.8' type='text/css' media='all' />
+<!-- This site uses the Google Analytics by MonsterInsights plugin v5.5.4 - Universal enabled - https://www.monsterinsights.com/ -->
+<script type="text/javascript">
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','../../www.google-analytics.com/analytics.js','__gaTracker');
+
+	__gaTracker('create', 'UA-22499108-1', 'auto');
+	__gaTracker('set', 'forceSSL', true);
+	__gaTracker('send','pageview');
+
+</script>
+<!-- / Google Analytics by MonsterInsights -->
+<script type='text/javascript' src='../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../wp-includes/js/jquery/ui/core.mine899.js?ver=1.11.4'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var social_connect_data = {"wordpress_enabled":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../wp-content/plugins/social-connect/media/js/connect9738.js?ver=5.1.8'></script>
+<link rel='https://api.w.org/' href='../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../xmlrpc0db0.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='Some steps further with the omnidirectional robot' href='../some-steps-further-with-the-omnidirectional-robot/index.html' />
+<link rel='next' title='Arrival of the new omniwheels' href='../arrival-of-the-new-omniwheels/index.html' />
+
+<link rel="canonical" href="index.html" />
+<link rel='shortlink' href='../indexf993.html?p=703' />
+<link rel="alternate" type="application/json+oembed" href="../wp-json/oembed/1.0/embeda149.json?url=http%3A%2F%2Fwww.ludep.com%2Fdrone-new-pid-with-polar-coordinates-and-howto-improve-reactivity-and-accuracy%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../wp-json/oembed/1.0/embed4c94?url=http%3A%2F%2Fwww.ludep.com%2Fdrone-new-pid-with-polar-coordinates-and-howto-improve-reactivity-and-accuracy%2F&amp;format=xml" />
+<meta property="og:type" content="article"/><meta property="og:url" content="http://www.ludep.com/drone-new-pid-with-polar-coordinates-and-howto-improve-reactivity-and-accuracy/"/><meta property="og:title" content="Drone: new PID with polar coordinates and HowTo improve reactivity and accuracy"/><meta property="og:description" content="Michael | Drone, Ideas, Issues, Programming, Refining the project"/><meta property="og:image" content="http://www.ludep.com/wp-content/uploads/2011/06/cartesianToPolar_graphic-150x150.png"/><link rel="shortcut icon" href="../wp-content/plugins/multicons/images/favicon.ico" />
+
+
+
+<link rel='stylesheet' id='social_connect-css'  href='../wp-content/plugins/social-connect/media/css/style9738.css?ver=5.1.8' type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css'  href='../wp-includes/css/dashicons.min9738.css?ver=5.1.8' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-jquery-ui-dialog-css'  href='../wp-includes/css/jquery-ui-dialog.min9738.css?ver=5.1.8' type='text/css' media='all' />
+		<style type="text/css">
+						ol.footnotes li {list-style-type:decimal;}
+						ol.footnotes{font-size:0.8em; color:#666666;}		</style>
+		<link rel="Shortcut Icon" type="image/x-icon" href="../favicon.ico" />
+</head>
+<body class="post-template-default single single-post postid-703 single-format-standard">
+	<div id="container" class="hfeed">
+	<div id="header">
+		<div id="masthead">
+						<div style="float:left;">
+																						<h3><a href="../index.html">LUDEP</a></h3>
+													<div class="description">Leading Units &amp; Drone Enabled Probing</div>
+												</div>
+			<div class="clear"></div>
+		</div>
+					<div id="access">
+				<div class="menu"><ul>
+<li class="page_item page-item-6"><a href="../index.html">Home</a></li>
+<li class="page_item page-item-9 current_page_parent"><a href="../blog/index.html">Blog</a></li>
+<li class="page_item page-item-47"><a href="../project/index.html">The project</a></li>
+<li class="page_item page-item-50"><a href="../links-downloads/index.html">Links &#038; Downloads</a></li>
+<li class="page_item page-item-30"><a href="../about/index.html">About</a></li>
+</ul></div>
+				<div class="clear"></div>
+			</div>
+				<div class="clear"></div>
+	</div>
+		<div class="sidebar">
+					</div>
+
+
+<!-- end header --><div id="wrapper">
+	<div id="content-wrapper">
+		<div id="content" role="main">
+			
+		<div id="postpath">
+			<a title="Goto homepage" href="../index.html">Home</a>
+			 &raquo; <a href="../category/drone/index.html">Drone</a>, <a href="../category/ideas/index.html">Ideas</a>, <a href="../category/issues/index.html">Issues</a>, <a href="../category/programming/index.html">Programming</a>, <a href="../category/refining-the-project/index.html">Refining the project</a>			&raquo; Drone: new PID with polar coordinates and HowTo improve reactivity and accuracy		</div>
+	
+
+	<!--div class="post"-->
+	<div id="post-703" class="post post-703 type-post status-publish format-standard has-post-thumbnail hentry category-drone category-ideas category-issues category-programming category-refining-the-project">
+		 <h1>Drone: new PID with polar coordinates and HowTo improve reactivity and accuracy</h1>
+					<table class="info entry-meta">
+				<tr>
+					<td class="date">June 26, 2011</td>
+					<td>
+													<span class="postedby">
+								Posted by <a href="http://michael/" title="Visit Michael&#8217;s website" rel="author external">Michael</a> 
+							</span>
+								<span class="filledunder">under</span>
+												<span class="filledunder">
+							<a href="../category/drone/index.html" rel="category tag">Drone</a>, <a href="../category/ideas/index.html" rel="category tag">Ideas</a>, <a href="../category/issues/index.html" rel="category tag">Issues</a>, <a href="../category/programming/index.html" rel="category tag">Programming</a>, <a href="../category/refining-the-project/index.html" rel="category tag">Refining the project</a>						</span>
+					</td>
+											<td>
+						
+				
+							<div class="act">
+																	<span class="comments">Comments off</span>
+																							</div>
+						</td>
+					
+				</tr>
+			</table>
+		
+		<div class="content">
+			<div style="float:right;padding: 0 0 10px 10px" class="interactive_right"><iframe allowtransparency="true" frameborder="0" scrolling="no" src="http://platform.twitter.com/widgets/tweet_button.html?url=http%3A%2F%2Fwww.ludep.com%2Fdrone-new-pid-with-polar-coordinates-and-howto-improve-reactivity-and-accuracy%2F&amp;text=Drone:%20new%20PID%20with%20polar%20coordinates%20and%20HowTo%20improve%20reactivity%20and%20accuracy&amp;count=vertical&amp;lang=" style="width:65px; height:65px;"></iframe><iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.ludep.com%2Fdrone-new-pid-with-polar-coordinates-and-howto-improve-reactivity-and-accuracy%2F&amp;layout=box_count&amp;show_faces=false&amp;width=65&amp;action=like&amp;font=arial&amp;colorscheme=light&amp;height=65" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:65px; height:65px;" allowTransparency="true"></iframe></div><h2>Handling polar coordinates for the PID</h2>
+<h3 style="text-align: justify;">Defining a new error</h3>
+<p style="text-align: justify;">Previously<sup><a href="#footnote_0_703" id="identifier_0_703" class="footnote-link footnote-identifier-link" title="As stated in a former article : http://www.ludep.com/performing-simple-image-analysis-and-full-pid-controller-with-the-drone/">1</a></sup>, we have seen how to manage a fair tracking with a PID control loop that uses a traditional Cartesian coordinates system. Picturing its idea seemed however rather less intuitive than by considering polar coordinates.</p>
+<p style="text-align: justify;">We are indeed considering a central point and an offset between it and the position of the roundel. The goal of the PID is to make them be about the same. Therefore, we can simply consider that the distance between the middle of our plan and the roundel is a radius, and an angle is formed by the abscissae axis and this radius (look at the figure below to picture the situation).</p>
+<p style="text-align: justify;"><a href="../wp-content/uploads/2011/06/cartesianToPolar_graphic.png"><img class="aligncenter size-large wp-image-731" title="cartesianToPolar_graphic" src="../wp-content/uploads/2011/06/cartesianToPolar_graphic-1024x388.png" alt="" width="640" height="242" srcset="http://www.ludep.com/wp-content/uploads/2011/06/cartesianToPolar_graphic-1024x388.png 1024w, http://www.ludep.com/wp-content/uploads/2011/06/cartesianToPolar_graphic-300x113.png 300w, http://www.ludep.com/wp-content/uploads/2011/06/cartesianToPolar_graphic-100x37.png 100w, http://www.ludep.com/wp-content/uploads/2011/06/cartesianToPolar_graphic.png 1107w" sizes="(max-width: 640px) 100vw, 640px" /></a></p>
+<p style="text-align: justify;">With using the radius as the only error parameter, a PID controller can be implemented. In such a representation of the system, what does really matter is for the radius to be as close to zero as possible. Having a different angle does not make any difference in measuring the angle: it is as wrong to be at a 3Pi/4 angle as at a -Pi/2 angle (as long as the radius is the same in both cases). The correction applied to the motors will be the same in intensity, and power applied is what is really at stakes while dealing with this kind of system. The angle will serve the only purpose of telling to the motors in what direction they have to rotate in order to move the drone in the right direction &#8211; no PID is necessary for that. Our PID is rather here to tell how fast the drone has to move in that direction.</p>
+<h3 style="text-align: justify;">Changing the code</h3>
+<p style="text-align: justify;">It appears then more natural and even easier to handle one radius parameter instead of the old two x and y error parameters &#8211; one for each axis. This change required yet a few tweaks in the code that had to be tested independently:</p>
+<ul style="text-align: justify;">
+<li>image analysis returns Cartesian coordinates for roundel position. A switch from Cartesian coordinates to polar ones has to be done. The maths behind this change are straightforward:</li>
+</ul>
+<p style="text-align: justify;"><a href="../wp-content/uploads/2011/06/cartesianToPolar1.png"><img class="aligncenter size-full wp-image-722" title="cartesianToPolar" src="../wp-content/uploads/2011/06/cartesianToPolar1.png" alt="" width="655" height="153" srcset="http://www.ludep.com/wp-content/uploads/2011/06/cartesianToPolar1.png 655w, http://www.ludep.com/wp-content/uploads/2011/06/cartesianToPolar1-300x70.png 300w, http://www.ludep.com/wp-content/uploads/2011/06/cartesianToPolar1-100x23.png 100w" sizes="(max-width: 655px) 100vw, 655px" /></a></p>
+<ul style="text-align: justify;">
+<li>before doing so, it might be nice to perform an axial symmetry using the x-axis, in order to get a more intuitive picture of the plan. Here is the call to the function changing the coordinates &#8211; the symmetry is done while passing parameters:</li>
+</ul>
+<pre style="padding-left: 60px;">convertToPolarCoordinates(xval - XMIDDLE, -(yval - YMIDDLE), &amp;radius, &amp;theta);
+
+//XMIDDLE is the x-value for which the image is equally split in two parts (same goes with YMIDDLE and the y-axis)</pre>
+<ul>
+<li style="text-align: justify;">creating a new function for the drone is necessary: it has to be possible to tell it to go in a defined direction, at a given speed. Since the API can only handle orders on two Cartesian axis, to pitch and roll (not mentioning yaw to turn and gaz to change altitude), some basic conversion (converting a movement on one axis to a movement on two perpendicular axis)  has also to be taken care of here.</li>
+</ul>
+<p>&nbsp;</p>
+<p style="text-align: center;"><a href="../wp-content/uploads/2011/06/setDirection3.png"><img class="aligncenter size-thumbnail wp-image-733" title="setDirection" src="../wp-content/uploads/2011/06/setDirection3.png" alt="" width="752" height="274" srcset="http://www.ludep.com/wp-content/uploads/2011/06/setDirection3.png 1044w, http://www.ludep.com/wp-content/uploads/2011/06/setDirection3-300x109.png 300w, http://www.ludep.com/wp-content/uploads/2011/06/setDirection3-1024x372.png 1024w, http://www.ludep.com/wp-content/uploads/2011/06/setDirection3-100x36.png 100w" sizes="(max-width: 752px) 100vw, 752px" /></a></p>
+<p style="text-align: justify;">The core of the algorithm kept unchanged: we merely apply a PID control loop that take the radius as an error parameter that should be close to zero. The results were therefore as good as the previous one (not better). A simpler Proportional Derivative (PD) is being considered, insofar as the Integral term main purpose is to help remove small errors to help being exactly on top of the target, which is not essential for us, as long as the drone does not describe huge circles around it. We will go back later on this precise matter.</p>
+<h2 style="text-align: justify;">Responsiveness tests: which detection is really efficient ?</h2>
+<h3 style="text-align: justify;">A need for faster loops</h3>
+<p style="text-align: justify;">We recently introduced image analysis to deal with tag detection on the PC side. This was done with the idea of taking advantage of a greater computing power and the possibility to choose the kind of tag we want to track &#8211; hence getting ride of the limitation induced by the drone firmware. We have experimented that our detection roughly provided the same results, even better on average than the one given by the drone.</p>
+<p style="text-align: justify;">Well, this conclusion proved to be partly right. We were indeed a little more efficient than the embedded program in terms of frames received and analyzed: for a new frame received by the computer, our OpenCV algorithm performs a little better than the one embedded on the drone<strong> for the same frame</strong>. Since the PC sends orders to the drone only when a new frame was received, no matter if we are considering the OpenCV analysis or the embedded one, the PID results were almost the same.</p>
+<p style="text-align: justify;">The problem lies in the fact that the computer does not received all the frames got by the 60 fps vertical camera. Whereas this is due to a loss of data happening during the WiFi communication, a problem of bandwidth, or a slow processing time of new frames on the drone or computer side, we don&#8217;t really know. Since we have no access to the drone&#8217;s firmware yet, we cannot do anything about it. Anyway, our loop were therefore quite slow, running at an average speed of 62ms, meaning less than 10 frames per second (without image analysis, which would decrease again this speed). So as much new orders per second sent to the drone. And this is without taking into account some big slowdown on the computer side, entailing in delays of sometimes more than a second. Which is huge while considering such a reactive system: if the power applied to the motors at a given time is someway high due to a PID correction, a delay even as small as 3/4 of a second can have the drone overshoot its target so it will lose it for good.</p>
+<h3 style="text-align: justify;">Experiments</h3>
+<p style="text-align: justify;">To see how much useful data were lost and hence unanalysable by our algorithm, we kept running our OpenCV image analysis and the embedded roundel recognition at the same time, comparing the number of matches. However, the waiting time we used to have in each loop was deleted, so the program could run a new iteration even if the frame received was still the same. Because not getting any new frame does not mean not getting new navigation data, the program had then access to those navigation data send by the drone faster. And among those navigation data are kept the coordinates of tags detected by the algorithm embedded on the drone.</p>
+<p style="text-align: justify;">The next figure pictures the experiment process in a chart. Note: the results would have been even more obvious if we  were to split the OpenCV analysis and the navdata handling in two different threads.</p>
+<p style="text-align: center;"><a href="../wp-content/uploads/2011/06/efficiencyLogging.png"><img class="aligncenter size-full wp-image-749" title="efficiencyLogging" src="../wp-content/uploads/2011/06/efficiencyLogging.png" alt="" width="478" height="586" srcset="http://www.ludep.com/wp-content/uploads/2011/06/efficiencyLogging.png 683w, http://www.ludep.com/wp-content/uploads/2011/06/efficiencyLogging-244x300.png 244w, http://www.ludep.com/wp-content/uploads/2011/06/efficiencyLogging-81x100.png 81w" sizes="(max-width: 478px) 100vw, 478px" /></a></p>
+<p style="text-align: justify;">The results are listed in the graph below. On average, the<strong> embedded algorithm records 1.45 times more <em>different </em>coordinates</strong> of the ground tag than the OpenCV algorithm running on the computer.</p>
+<p style="text-align: justify;"><a href="../wp-content/uploads/2011/06/efficiencyLogging_graph.png"><img class="aligncenter size-large wp-image-751" title="efficiencyLogging_graph" src="../wp-content/uploads/2011/06/efficiencyLogging_graph-1024x601.png" alt="" width="640" height="375" srcset="http://www.ludep.com/wp-content/uploads/2011/06/efficiencyLogging_graph-1024x601.png 1024w, http://www.ludep.com/wp-content/uploads/2011/06/efficiencyLogging_graph-300x176.png 300w, http://www.ludep.com/wp-content/uploads/2011/06/efficiencyLogging_graph-100x58.png 100w, http://www.ludep.com/wp-content/uploads/2011/06/efficiencyLogging_graph.png 1091w" sizes="(max-width: 640px) 100vw, 640px" /></a></p>
+<p style="text-align: justify;">Our recent discoveries with the speed acquisition of navigation made us test it without any video display on our computer, not to mention video analysis. Our running loop went therefore faster, multiplying its speed by about 300 times. Even if it does not multiply the navigation data like this, we still receive some more, and are sure to get all of them, without losing them while the image analysis is being processed.</p>
+<h3 style="text-align: justify;">Conclusion</h3>
+<h4 style="text-align: justify;">Gained responsiveness</h4>
+<p style="text-align: justify;">The main comment that can be done about those results is that the embedded detection is obviously much more efficient (about 45% more)  once we consider all the useful frames. And the reason for that is that the drone has more frame at its disposal on which it can run the analysis than the WiFi connected computer. The actual drone&#8217;s navigation data keep changing even while no new frame is received, which confirms that some frames are lost in the process (otherwise coordinates sent by the drone would come at the same pace than those got by our OpenCV algorithm). Add this to the fact that the image is converted from raw data to an actual image that can be displayed on the computer&#8217;s screen during the transmission process, and you can start having a better idea of the benefits in dealing with algorithms on board rather than with a second device, no matter how powerful it is.</p>
+<p style="text-align: justify;">One path we could follow in order to get improved results without changing our way of doing things lies in using the newly release ARDrone&#8217;s firmware, that allegedly improves the video decoding time process thanks to an other codec. The problem is that this firmware does not seem stable enough at the moment, and it really messes things up with our code.</p>
+<p style="text-align: justify;">We could however implement the image analysis in a separate thread, without slowing down the PID algorithm. Since we will gain speed in receiving navigation data as we saw it, we might want to not check twice the same package (i.e. filtering data), and therefore send only once the same order to the drone, so as to avoid jamming the bandwidth.</p>
+<h4 style="text-align: justify;">What to do with those performance conclusions ?</h4>
+<p style="text-align: justify;">One legitimate question one may ask is whether we really need all those frames for fulfilling our tracking purpose. Our early tests showed us a much more responsive and accurate drone, that kept its target in sight longer. The PID (or PD at least) needs to be tuned again, since the drone has still a tendency to wander around the roundel, and not hover perfectly on top of it.</p>
+<p style="text-align: justify;">As for our flock of robot tracking purpose, we may have now a major issue. We will need to do image analysis to detect different robots while following them at the same time. But since we actually need to be quickly responsive for the task that helps follow the leader, we can contemplate doing the following:</p>
+<ul style="text-align: justify;">
+<li>use the really efficient embedded detection for hovering on top of the leader.</li>
+<li>take advantage of our own OpenCV image analysis in a separate, slower thread, for reporting coordinates and orientation of the other robots in the flock. We do not need a speed as high as for the hovering task to do so, so it should be just fine for keeping the formation on the ground.</li>
+<li>since we plan one being able to change our leader at any time, and tags recognized by the drone are limited, we will have to use whatever is made available by the engineers at Parrot. For the moment, roundels, oriented roundels and stripes of different colors can be tracked. This should be just enough for our task.</li>
+</ul>
+<p style="text-align: justify;">This can all be summed up in the chart below.</p>
+<p style="text-align: justify;"><a href="../wp-content/uploads/2011/06/PCThreads.png"><img class="aligncenter size-large wp-image-747" title="PCThreads" src="../wp-content/uploads/2011/06/PCThreads-1024x601.png" alt="" width="640" height="375" srcset="http://www.ludep.com/wp-content/uploads/2011/06/PCThreads-1024x601.png 1024w, http://www.ludep.com/wp-content/uploads/2011/06/PCThreads-300x176.png 300w, http://www.ludep.com/wp-content/uploads/2011/06/PCThreads-100x58.png 100w, http://www.ludep.com/wp-content/uploads/2011/06/PCThreads.png 1051w" sizes="(max-width: 640px) 100vw, 640px" /></a></p>
+<p>&nbsp;<br />
+<b>References</b></p>
+<ol class="footnotes">
+<li id="footnote_0_703" class="footnote">As stated in a former article : <a href="../performing-simple-image-analysis-and-full-pid-controller-with-the-drone/index.html">http://www.ludep.com/performing-simple-image-analysis-and-full-pid-controller-with-the-drone/</a> [<a href="#identifier_0_703" class="footnote-link footnote-back-link">&#8617;</a>]</li>
+</ol>
+<div class='shareaholic-canvas' data-app-id='17416092' data-app='share_buttons' data-title='Drone: new PID with polar coordinates and HowTo improve reactivity and accuracy' data-link='http://www.ludep.com/drone-new-pid-with-polar-coordinates-and-howto-improve-reactivity-and-accuracy/' data-summary=''></div><div class='shareaholic-canvas' data-app-id='17416100' data-app='recommendations' data-title='Drone: new PID with polar coordinates and HowTo improve reactivity and accuracy' data-link='http://www.ludep.com/drone-new-pid-with-polar-coordinates-and-howto-improve-reactivity-and-accuracy/' data-summary=''></div>			<div class="clear"></div>
+			<div class="postpages">
+							</div>
+							<div class="under">
+										<div class="clear"></div>
+				</div>
+					</div>
+		
+	</div>
+	
+			<div id="comments">
+
+
+	<p class="nocomments">Comments are closed.</p>
+
+
+
+</div><!-- #comments -->
+	<div id="postnavi" class="navigation">
+		<div class="nav prev left"><a href="../arrival-of-the-new-omniwheels/index.html" rel="next">&laquo;  Arrival of the new omniwheels</a></div>
+		<div class="nav next right"><a href="../some-steps-further-with-the-omnidirectional-robot/index.html" rel="prev"> Some steps further with the omnidirectional robot &raquo;</a></div>
+		<div class="fixed"></div>
+	</div>
+
+		
+		</div>
+	</div>
+</div>
+
+
+<div class="clear"></div>
+<div id="outer-footer">
+<div id="footer">
+
+<div id="blue-footer">
+	<div class="footer-column">
+		
+	</div>
+</div>
+<div class="clear"></div>
+</div> <!-- footer -->
+</div> <!-- outer-footer -->
+<div id="copyright" style="margin:5px; text-align:center; float:left;">
+<b>LUDEP</b> powered by <a href="http://wordpress.org/">WordPress</a> and 
+<a href="http://vatuma.com/">The Clear Line Theme</a><br/><br/>
+</div>
+<div style="float:right;">
+	<div id="follow-widget-3" style="float:left;"><ul class="followwrap size24 row"><li class="icon_text"><a rel="nofollow me" target="_blank"  style="background: transparent url(../wp-content/plugins/share-and-follow/default/24/facebook.png) no-repeat top left;padding-left:28px;line-height:28px;" class="facebook" href="https://www.facebook.com/pages/Ludep/205635196128367" title="Become a fan"><span class="head">Become a fan</span></a></li><li class="icon_text"><a rel="nofollow me" target="_blank"  style="background: transparent url(../wp-content/plugins/share-and-follow/default/24/rss.png) no-repeat top left;padding-left:28px;line-height:28px;" class="rss" href="../feed/atom/index.html" title="RSS/Atom feed"><span class="head">RSS/Atom feed</span></a></li><li class="icon_text"><a rel="nofollow me" target="_blank"  style="background: transparent url(../wp-content/plugins/share-and-follow/default/24/twitter.png) no-repeat top left;padding-left:28px;line-height:28px;" class="twitter" href="http://www.twitter.com/LUDEPdotCOM" title="Follow us"><span class="head">Follow us</span></a></li><li class="icon_text"><a rel="nofollow me" target="_blank"  style="background: transparent url(../wp-content/plugins/share-and-follow/default/24/youtube.png) no-repeat top left;padding-left:28px;line-height:28px;" class="youtube" href="http://www.youtube.com/LUDEPdotCOM" title="Youtube channel"><span class="head">Youtube channel</span></a></li></ul><div class="clean"></div> </div>	<div class="clear"></div>
+</div>
+<div class="clear"></div>
+	<input type="hidden" id="social_connect_login_form_uri" value="http://www.ludep.com/wp-login.php" />
+	<script type='text/javascript' src='../wp-includes/js/comment-reply.min9738.js?ver=5.1.8'></script>
+<script type='text/javascript' src='../wp-includes/js/wp-embed.min9738.js?ver=5.1.8'></script>
+
+		</div> <!--container -->
+</body>
+
+<!-- Mirrored from www.ludep.com/drone-new-pid-with-polar-coordinates-and-howto-improve-reactivity-and-accuracy/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 15 Mar 2021 00:49:20 GMT -->
+</html>
